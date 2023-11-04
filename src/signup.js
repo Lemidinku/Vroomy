@@ -27,7 +27,7 @@ function Signup() {
         console.error('Error signing up 1:', error.message);
       } else {
         console.log('Signup successful:');
-        navigate("/login")
+        navigate("/")
       }
     } catch (error) {
       console.error('Error signing up 2:', error.message);

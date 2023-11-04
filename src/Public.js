@@ -1,12 +1,10 @@
 import React  from 'react';
 import { useNavigate } from 'react-router';
-import Header from './Header';
 function Public() {
   const navigate = useNavigate()
   const goToLogIn = async (e) => {navigate("./login")};
   return (
     <>
-    <Header/>
     <div >
       HOME
     </div>
