@@ -1,6 +1,6 @@
 import React  from 'react';
 import { useNavigate } from 'react-router';
-import { supabase } from './auth';
+import { supabase } from '../auth';
 
 function Signup() {
 

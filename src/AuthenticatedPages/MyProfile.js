@@ -1,9 +1,9 @@
 import React, { useContext, useState,useEffect }  from 'react';
 import { useNavigate } from 'react-router';
-import { supabase } from "./auth"
-import { AuthContext } from './AuthProvider';
+import { supabase } from "../auth"
+import { AuthContext } from '../AuthProvider';
 
-function Profile() {
+function MyProfile() {
   const navigate = useNavigate()
   const  {user} = useContext(AuthContext)
   const [newAvatar, setNewAvatar] = useState() // file uploaded to input(type="file")
@@ -49,7 +49,7 @@ function Profile() {
     getAvatarUrl()
   }
 
-  const deleteAccount = async () => {
+const deleteAccount = async () => {
         const {data, error } = await supabase.auth.admin.deleteUser(user.id);
         if (error) {
           console.error('Error deleting user:', error);
@@ -75,4 +75,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default MyProfile;

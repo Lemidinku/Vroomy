@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
     const  {user} = useContext(AuthContext)
-
+    console.log(user?.user_metadata.account_type)
     return (
         <header>
             <NavLink to="/">HOME</NavLink>

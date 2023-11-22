@@ -1,6 +1,6 @@
 import React  from 'react';
 import { useNavigate } from 'react-router';
-function Public() {
+function Home() {
   const navigate = useNavigate()
   const goToLogIn = async (e) => {navigate("./login")};
   return (
@@ -21,4 +21,4 @@ Define a custom AuthProvider component that wraps your application and manages t
   );
 }
 
-export default Public;
+export default Home;
