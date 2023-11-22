@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 import MyProfile from './AuthenticatedPages/MyProfile';
-import Notifications from './AuthenticatedPages/MyProfile';
+import Notifications from './AuthenticatedPages/Notifications.js';
 import Home from './PublicPages/Home';
 import About from './PublicPages/About';
 

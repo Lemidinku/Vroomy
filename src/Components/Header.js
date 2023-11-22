@@ -5,18 +5,21 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
     const  {user} = useContext(AuthContext)
-    console.log(user?.user_metadata.account_type)
+    let account_type = user?.user_metadata.account_type
     return (
         <header>
             <NavLink to="/">HOME</NavLink>
-            
-            {!user ?
-            <>
+            <NavLink to="cars">Cars</NavLink>
+            {user && <>
+            <NavLink to="mydashboard">My Dashboard</NavLink>
+            <NavLink to="notifications">Notifications</NavLink>
+            <NavLink to="myprofile">Profile</NavLink>
+            </>}
+            {!user && <>
+            <NavLink to="about">About</NavLink>
             <NavLink to="login">Login</NavLink>
             <NavLink to="signup">Sign Up</NavLink>
-            </>
-            : <NavLink to="profile">Profile</NavLink>
-            }
+            </>}
 
         </header>
     );
