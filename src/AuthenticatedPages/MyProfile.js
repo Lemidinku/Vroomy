@@ -10,7 +10,7 @@ function MyProfile() {
   const [avatarFilename,setAvatarFilename] = useState() // file name recieved from profiles.avatar_url
   const generalUrl = "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/avatars/"
   const supabaseLogout = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     try {
       const { user, error } = await supabase.auth.signOut()
       if (error) {
@@ -50,12 +50,15 @@ function MyProfile() {
   }
 
 const deleteAccount = async () => {
-        const {data, error } = await supabase.auth.admin.deleteUser(user.id);
+        let temp_id = user.id
+        // const {error:e } = await supabase.auth.signOut()
+        await supabaseLogout()
+        const {data, error } = await supabase.auth.admin.deleteUser(temp_id);
         if (error) {
           console.error('Error deleting user:', error);
           return;
         }
-  
+        navigate("/")
         console.log('User deleted:', data);
   }
 
