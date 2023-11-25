@@ -4,7 +4,7 @@ import { supabase } from '../auth';
 
 function Login() {
 
-const [userInfo, setUserInfo] = React.useState({email:"", password:"", role:"renter"})
+const [userInfo, setUserInfo] = React.useState({email:"", password:""})
 const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -30,25 +30,19 @@ const navigate = useNavigate()
     }
     })
   }
-  const changeRole = (newRole) => {
-    setUserInfo(prev =>{
-      return {
-      ...prev,
-      role: newRole
-    }
-    })
-  }
+ 
 
   return (
     <div >
       <form onSubmit={handleSubmit}>
       <div>
-        <span onClick={()=>changeRole("renter")}>Renter</span>  <span  onClick={()=>changeRole("owner")}>Car Owner</span>
-        </div>
-      <h1>{userInfo.role}</h1>
       <input type='email' name="email" value={userInfo.email} onChange={handleChange}></input>
+      </div>
+      <div>
       <input type='password' name="password" value={userInfo.password} onChange={handleChange}></input>
+      </div>
       <button >Login</button>
+
       </form>
     </div>
   );
