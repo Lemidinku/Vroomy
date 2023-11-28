@@ -142,7 +142,7 @@ const  {user} = useContext(AuthContext)
 
         </div>
       </div>
-      <label htmlFor="transmissionType">Automatic</label>
+      <label htmlFor="automatic">Automatic</label>
       <input type='radio' name="transmissionType"  id="automatic" value="automatic" checked={carInfo.transmissionType == "automatic"} onChange={handleChange} required></input>
       <input type='radio' name="transmissionType"  id="manual" value="manual" checked={carInfo.transmissionType == "manual"} onChange={handleChange} required></input>
       <label htmlFor="manual">Manual</label>
