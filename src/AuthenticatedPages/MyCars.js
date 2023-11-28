@@ -1,5 +1,8 @@
+import AddCar from "../Components/AddCar";
 const   MyCars = () => {
-    return <h1>MyCars</h1>
+    return (
+        <AddCar/>
+    )
 }
 
 export default MyCars;
