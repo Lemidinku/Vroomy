@@ -1,6 +1,7 @@
 import React ,{useContext} from 'react';
 import { supabase } from '../auth';
 import { AuthContext } from '../AuthProvider';
+import { v4 as urlGenerator } from 'uuid';
 
 function AddCar() {
 const  {user} = useContext(AuthContext)
@@ -13,29 +14,75 @@ const  {user} = useContext(AuthContext)
             dailyRentalFee:"", 
             location:"",
             transmissionType:"automatic",
-            additionalFeatures:""
+            additionalFeatures:"",
+
+            //photos
+            photo1 :"",
+            photo2 :"",
+            photo3 :""
+
             
           })
+  const uploadCarImage = async (imagePath, image)=> {
+      const { error: uploadError } = await supabase.storage
+      .from("car_images")
+      .upload(imagePath, image);
+      if (uploadError) console.log("Error Occured while uploading the file")
+    }
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
+    
+
+    //generate random urls for the images
+    let url_1;
+    let url_2;
+    let url_3;
+
+    // upload images 
+    try {
+
+      if (carInfo.photo1) {
+        url_1  = urlGenerator()
+        await uploadCarImage(url_1, carInfo.photo1)}
+
+      if (carInfo.photo2) {
+          url_2  = urlGenerator()
+          await uploadCarImage(url_2, carInfo.photo2)}
+      if (carInfo.photo3) {
+          url_3  = urlGenerator()
+          await uploadCarImage(url_3, carInfo.photo3)}
+
+
+    }
+    
+    catch (err) {
+      console.error(err.message)
+      return
+    }
+
     try {
         const { data, error} = await supabase
         .from('cars')
         .insert([
         { 
             make_and_model: carInfo.makeAndModel,
-            owner_id:  user.id, //'f03e5f81-6334-4474-a6fe-9ecff838ecd2',
+            owner_id:  user.id, 
             year: carInfo.year,
             color: carInfo.color,
             seating_capacity: carInfo.seatingCapacity,
             daily_rental_fee: carInfo.dailyRentalFee,
             location:carInfo.location,
             transmission_type:carInfo.transmissionType,
-            additional_features: carInfo.additionalFeatures
+            additional_features: carInfo.additionalFeatures,
+            photo_url_1: url_1, 
+            photo_url_2: url_2,
+            photo_url_3: url_3
+
         },
         ])
-        .select()
-
+        .select('id')
+        console.log(data[0].id)
     } catch (error) {
         console.error(error.message)
     }
@@ -49,52 +96,17 @@ const  {user} = useContext(AuthContext)
     }
     })
   }
-
-
-//   const validInputs = async () => {
-//     let { data, error } = await supabase
-//     .from('profiles')
-//     .select('id')
-//     .eq("username", userInfo.username)
-//     if (data[0]) { 
-//       console.log("Username already exist")
-//       return false
-//       }
-//     if (error) 
-//     {console.log(error.message)
-//       return false
-//     }
-
-//     if (userInfo.password !== userInfo.repeatedPassword) {
-//       console.log("Passwords does not match")
-//       return false
-//     }
-
-//     const validatePhoneNumber = (phoneNum) => {
-      
-//       if (phoneNum.startsWith("09") && phoneNum.startsWith("07")) return false
-//       if (isNaN(parseInt(phoneNum))) return false
-//       if (phoneNum.length!== 10) return false
-
-//       return true
-//     }
-    
-//     if (!validatePhoneNumber(userInfo.phone_number)) {
-//       console.log("Invalid Phone Number")
-//       return false
-//     }
+  const handleImgChange = (e) => {
+    setCarInfo(prev =>{
+      return {
+      ...prev,
+      [e.target.name]: e.target.files[0]
+    }
+    })
+  }
 
 
 
-
-
-
-
-
-//     return true
-
-    
-//   }
   return (
     <div>
     <form onSubmit={handleSubmit}>
@@ -112,6 +124,7 @@ const  {user} = useContext(AuthContext)
             pattern="[0-9]{4}" value={carInfo.year} onChange={handleChange} required />
 
         </div>
+        
         <div>
           <label htmlFor="type">Type</label>
           <input type="text" name="type" id="type" minLength="3" value={carInfo.type} onChange={handleChange} required/>
@@ -146,10 +159,26 @@ const  {user} = useContext(AuthContext)
       <input type='radio' name="transmissionType"  id="automatic" value="automatic" checked={carInfo.transmissionType == "automatic"} onChange={handleChange} required></input>
       <input type='radio' name="transmissionType"  id="manual" value="manual" checked={carInfo.transmissionType == "manual"} onChange={handleChange} required></input>
       <label htmlFor="manual">Manual</label>
+
+      <div >
+        <div>
+        <label htmlFor='photo1'>photo1 </label>
+        <input type='file' accept='image/*' onChange={handleImgChange} id='photo1' name="photo1" required/>
+        </div>
+        <div>
+        <label htmlFor='photo1'>photo2 </label>
+        <input type='file' accept='image/*' onChange={handleImgChange} name="photo2" /> 
+        </div>
+        <div>
+        <label htmlFor='photo1'>photo3 </label>
+        <input type='file' accept='image/*' onChange={handleImgChange}  name="photo3"/>
+        </div>
+      </div>
+
+
       <button >AddCar</button>
       </form>
 
-      <button onClick={handleSubmit}>Dummy</button>
     </div>
   );
 }
