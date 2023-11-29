@@ -2,6 +2,8 @@ import React, { useContext, useState,useEffect }  from 'react';
 import { useNavigate } from 'react-router';
 import { supabase } from "../auth"
 import { AuthContext } from '../AuthProvider';
+import { v4 as urlGenerator } from 'uuid';
+
 
 function MyProfile() {
   const navigate = useNavigate()
@@ -42,7 +44,7 @@ function MyProfile() {
     
     const { error: uploadError } = await supabase.storage
     .from("avatars")
-    .upload(newAvatar.name, newAvatar);
+    .upload(urlGenerator(), newAvatar);
     if (uploadError) console.log("Error Occured while uploading the file")
 
     getAvatarUrl()
