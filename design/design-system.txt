@@ -23,6 +23,9 @@ COLOR SYSTEM(from lightest to darker)
         #09102F,
         #040716
 
+    accent
+        #2f9e44
+
 
 TYPOGRAPHY SYSTEM
     Type Face
