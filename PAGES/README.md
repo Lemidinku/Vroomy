@@ -20,4 +20,4 @@
 
 4.**checkbox.js**: manages the checked and unchecked state of a check box
 
-## this is a first drat the will be a lot of code cleaning up and generalizatioin of the both the css rule and the scripts
+## this is a first draft ther will be  lots of code cleaning up and generalizatioin of the both the css rule and the scripts
