@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Full Stack Web Developer passionate about turning ideas into elegant, functional web solutions. Specializing in back-end development with a design-focused approach to front-end development."
+    />
+
+    <meta
+      name="keywords"
+      content="Full Stack Web Developer, Machine Learning, Web Development, JavaScript, React, Python, Django"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>vroomy | browsing</title>
+  </head>
+  <body>
+    <header class="header">
+      <p class="header__logo is-upper">vr<span>oo</span>my</p>
+      <ul class="header__nav">
+        <li>
+          <a class="header__nav__anchor flex" href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 22 22"
+              fill="none"
+              lass="header__nav__anchor"
+            >
+              <path
+                d="M10.916 21C16.3924 21 20.8319 16.5228 20.8319 11C20.8319 5.47715 16.3924 1 10.916 1M10.916 21C5.43953 21 1 16.5228 1 11M10.916 21C13.7006 21 15.958 16.5228 15.958 11C15.958 5.47715 13.7006 1 10.916 1M10.916 21C8.13134 21 5.87395 16.5228 5.87395 11C5.87395 5.47715 8.13134 1 10.916 1M1 11C1 5.47715 5.43953 1 10.916 1M1 11H21M4.69748 3.11864C4.69748 3.11864 11.2801 6.16949 17.1345 3.11864M17.1345 18.8814C17.1345 18.8814 10.5519 15.8305 4.69748 18.8814"
+                stroke="black"
+              />
+            </svg>
+            Browse
+          </a>
+        </li>
+        <li class="header__nav_CTA">
+          <a class="btn btn--primary" href="#">Get Started</a>
+        </li>
+      </ul>
+    </header>
+    <main class="flex">
+      <div class="main-container">
+        <section class="flex section-container">
+          <div class="grid section-container">
+            <div id="search-bar">
+              <input
+                class="input"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="flex section-container">
+              <button class="btn">
+                Sart
+                <i class="fa-solid fa-angle-down"></i></button
+              ><button class="btn">
+                End
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="dropdown hidden">
+            <button class="btn">
+              Sort by
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-content shadow">
+              <li><p>Rating</p></li>
+              <li><p>Price</p></li>
+              <li><p>lorem</p></li>
+            </ul>
+          </div>
+          <div>
+            <aside>
+              <div class="toggle">
+                <div></div>
+              </div>
+              <div class="checkbox"><i class="fa-solid fa-check"></i></div>
+            </aside>
+          </div>
+        </section>
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            <li>
+              <a aria-label="Pagination Arrow" class="pagination__btn">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentcolor"
+                  aria-hidden="true"
+                  height="30"
+                  width="30"
+                  class="btn--pagination__svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414.0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                aria-current="page"
+                class="btn--pagination btn--pagination--active"
+                >1
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" class="btn--pagination">2</a>
+            </li>
+            <li>
+              <a aria-current="page" class="btn--pagination">3</a>
+            </li>
+            <li>
+              <a aria-label="Pagination Arrow" class="pagination__btn"
+                ><svg
+                  viewBox="0 0 20 20"
+                  fill="currentcolor"
+                  aria-hidden="true"
+                  height="30"
+                  width="30"
+                  class="btn--pagination__svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414.0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/pagination.js"></script>
+    <script src="./scripts/popup-button.js"></script>
+    <script src="./scripts/toggleButton.js"></script>
+  </body>
+</html>
