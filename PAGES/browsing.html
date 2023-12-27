@@ -3,15 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Full Stack Web Developer passionate about turning ideas into elegant, functional web solutions. Specializing in back-end development with a design-focused approach to front-end development."
-    />
-
-    <meta
-      name="keywords"
-      content="Full Stack Web Developer, Machine Learning, Web Development, JavaScript, React, Python, Django"
-    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,45 +20,60 @@
     <title>vroomy | browsing</title>
   </head>
   <body>
-    <header class="header">
-      <p class="header__logo is-upper">vr<span>oo</span>my</p>
-      <ul class="header__nav">
-        <li>
-          <a class="header__nav__anchor flex" href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 22 22"
-              fill="none"
-              lass="header__nav__anchor"
-            >
-              <path
-                d="M10.916 21C16.3924 21 20.8319 16.5228 20.8319 11C20.8319 5.47715 16.3924 1 10.916 1M10.916 21C5.43953 21 1 16.5228 1 11M10.916 21C13.7006 21 15.958 16.5228 15.958 11C15.958 5.47715 13.7006 1 10.916 1M10.916 21C8.13134 21 5.87395 16.5228 5.87395 11C5.87395 5.47715 8.13134 1 10.916 1M1 11C1 5.47715 5.43953 1 10.916 1M1 11H21M4.69748 3.11864C4.69748 3.11864 11.2801 6.16949 17.1345 3.11864M17.1345 18.8814C17.1345 18.8814 10.5519 15.8305 4.69748 18.8814"
-                stroke="black"
-              />
-            </svg>
-            Browse
-          </a>
-        </li>
-        <li class="header__nav_CTA">
-          <a class="btn btn--primary" href="#">Get Started</a>
-        </li>
-      </ul>
+    <header>
+      <div class="header">
+        <p class="header__logo is-upper">vr<span>oo</span>my</p>
+        <ul class="header__nav">
+          <li>
+            <a class="header__nav__anchor flex" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 22 22"
+                fill="none"
+                class="header__nav__anchor"
+              >
+                <path
+                  d="M10.916 21C16.3924 21 20.8319 16.5228 20.8319 11C20.8319 5.47715 16.3924 1 10.916 1M10.916 21C5.43953 21 1 16.5228 1 11M10.916 21C13.7006 21 15.958 16.5228 15.958 11C15.958 5.47715 13.7006 1 10.916 1M10.916 21C8.13134 21 5.87395 16.5228 5.87395 11C5.87395 5.47715 8.13134 1 10.916 1M1 11C1 5.47715 5.43953 1 10.916 1M1 11H21M4.69748 3.11864C4.69748 3.11864 11.2801 6.16949 17.1345 3.11864M17.1345 18.8814C17.1345 18.8814 10.5519 15.8305 4.69748 18.8814"
+                  stroke="black"
+                />
+              </svg>
+              Browse
+            </a>
+          </li>
+          <li class="header__nav_CTA">
+            <a class="btn btn--primary" href="#">Get Started</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <main class="flex">
       <div class="main-container">
-        <section class="flex section-container">
+        <hgroup class="flex section-container">
           <div class="grid section-container">
-            <div id="search-bar">
-              <input
-                class="input"
-                type="text"
-                name="search"
-                id="search"
-                placeholder="Search"
-              />
-              <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="flex section-container">
+              <div id="search-bar">
+                <input
+                  class="input"
+                  type="text"
+                  name="search"
+                  id="search"
+                  placeholder="Search"
+                />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="dropdown hidden">
+                <button class="btn">
+                  Sort by
+                  <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-content shadow">
+                  <li><p>Rating</p></li>
+                  <li><p>Price</p></li>
+                  <li><p>lorem</p></li>
+                </ul>
+              </div>
             </div>
             <div class="flex section-container">
               <button class="btn">
@@ -79,26 +85,879 @@
               </button>
             </div>
           </div>
-          <div class="dropdown hidden">
-            <button class="btn">
-              Sort by
-              <i class="fa-solid fa-angle-down"></i>
-            </button>
-            <ul class="dropdown-content shadow">
-              <li><p>Rating</p></li>
-              <li><p>Price</p></li>
-              <li><p>lorem</p></li>
-            </ul>
-          </div>
-          <div>
-            <aside>
-              <div class="toggle">
-                <div></div>
+        </hgroup>
+
+        <div class="cars grid">
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
               </div>
-              <div class="checkbox"><i class="fa-solid fa-check"></i></div>
-            </aside>
+              <p class="price">&dollar;500</p>
+            </div>
           </div>
-        </section>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+          <div class="car-card car-card--electric shadow rounded">
+            <img src="./images/g-class pick up.jpg" alt="g-class pick up" />
+            <div class="car-card__text grid">
+              <h2 class="p-2">mercedice G-class</h2>
+
+              <div class="car-card__description">
+                <ul>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                  <li><p>sub text</p></li>
+                </ul>
+                <div class="car-card__about-owner">
+                  <img
+                    src="./images/profile-sample.png"
+                    alt="profile image of owner"
+                    width="40"
+                    height="40"
+                  />
+                  <ol>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star--checked"></li>
+                    <li class="fa fa-star star"></li>
+                    <li class="fa fa-star star"></li>
+                  </ol>
+                </div>
+              </div>
+              <p class="price">&dollar;500</p>
+            </div>
+          </div>
+        </div>
+
         <nav aria-label="Pagination">
           <ul class="pagination">
             <li>
@@ -153,8 +1012,105 @@
           </ul>
         </nav>
       </div>
+      <aside class="filter">
+        <div class="flex filter__header shadow rounded">
+          <p>filter</p>
+          <div class="toggle">
+            <div></div>
+          </div>
+        </div>
+        <ul class="shadow filter__body rounded">
+          <li class="filter__body__blocks">
+            <h2 class="p-1">title</h2>
+
+            <ul>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="filter__body__blocks">
+            <h2 class="p-1">title</h2>
+
+            <ul>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="filter__body__blocks">
+            <h2 class="p-1">title</h2>
+
+            <ul>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+              <li class="filter__body__blocks__items">
+                <p>catagory</p>
+                <div class="checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
     </main>
-    <footer></footer>
+    <footer>
+      <p class="header__logo is-upper">vr<span>oo</span>my</p>
+      <p>
+        <a href="#">About</a> | <a href="#">Teams</a> | <a href="#">FAQ's</a>
+      </p>
+      <div>
+        <img
+          src="./images/ethio-flag.png"
+          alt="Ethiopian flag"
+          width="40"
+          height="40"
+          class="circle"
+        />
+        <p>Ethiopia <span>|</span> Addis Ababa</p>
+      </div>
+    </footer>
     <script src="./scripts/header.js"></script>
     <script src="./scripts/pagination.js"></script>
     <script src="./scripts/popup-button.js"></script>

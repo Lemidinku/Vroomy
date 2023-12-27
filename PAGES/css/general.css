@@ -4,6 +4,7 @@
   --default-dark: #040716;
   --light-dark: #4b5563;
   --lightest-dark: #e5e7eb;
+  --light-green: #2f9e44;
 }
 * {
   box-sizing: border-box;
@@ -46,6 +47,7 @@ svg {
 .flex {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .grid {
   display: grid;
@@ -53,6 +55,9 @@ svg {
 }
 .circle {
   border-radius: 50%;
+}
+.rounded {
+  border-radius: 9px;
 }
 .shadow {
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,

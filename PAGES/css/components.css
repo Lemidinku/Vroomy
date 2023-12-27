@@ -36,6 +36,7 @@
     filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
     background-color: #fff;
     border-radius: 11px;
+    padding-bottom: 1.6rem;
   }
 }
 /*  */
@@ -251,10 +252,10 @@
 }
 
 .checkbox {
-  width: 24px;
-  height: 22px;
+  width: 18px;
+  height: 16px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
   background-color: #fff;
   border: var(--lightest-dark) solid 2px;
@@ -269,4 +270,101 @@
   div {
     justify-self: end;
   }
+}
+
+.filter {
+  width: 15rem;
+  position: fixed;
+  left: 8rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filter__header {
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.1rem;
+  background: #fff;
+}
+
+.filter__body {
+  padding: 0.4rem 0.8rem;
+  display: grid;
+  gap: 1rem;
+  width: 85%;
+  margin: 0 auto;
+  background: #fff;
+}
+.filter__body__blocks {
+  display: grid;
+  gap: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: var(--lightest-dark) solid 2px;
+  ul {
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.8rem;
+  }
+}
+.filter__body__blocks__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star {
+  color: var(--lightest-dark);
+}
+.star--checked {
+  color: var(--primary-default) !important;
+}
+
+.cars {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3.2rem;
+  margin: 3.2rem 1.6rem 6.4rem 0;
+}
+.car-card {
+  max-width: 28rem;
+  position: relative;
+
+  img {
+    border-radius: 9px 9px 0 0;
+  }
+  .car-card__text {
+    gap: 1rem;
+    padding: 0.8rem;
+
+    > p {
+      text-align: center;
+    }
+  }
+}
+.car-card__description {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.2rem;
+}
+.car-card__about-owner {
+  display: grid;
+  justify-items: center;
+}
+
+.price {
+  margin-top: 1.6rem;
+  font-weight: 700;
+}
+.car-card--electric::after {
+  content: "Electric";
+  background-color: var(--light-green);
+  padding: 0.6rem;
+  letter-spacing: 0.075rem;
+  border-radius: 9px;
+  position: absolute;
+  top: 1.6rem;
+  right: 0;
+  transform: translateX(50%);
 }
