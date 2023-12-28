@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,200;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../PAGES/css/request.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="booking__request__nav">
+          <div class="logo">
+            <p class="logo__text">
+              VR<span class="logo__text--blue">OO</span>MY
+            </p>
+          </div>
+          <div class="page__title">
+            <p>Bookings Requests</p>
+          </div>
+          <div class="browse-profile">
+            <div class="browse">
+              <a href="#"
+                ><i class="fa-solid fa-globe"></i>
+                <p class="browse__text">Browse</p>
+              </a>
+            </div>
+            <div class="hamburger__menu">
+              <a href="#">
+                <iconify-icon
+                  icon="solar:hamburger-menu-broken"
+                  width="30"
+                  height="30"
+                ></iconify-icon>
+              </a>
+            </div>
+
+            <div class="profile">
+              <img
+                src="Images/portrait.jpg"
+                alt="Profile Picture"
+                class="profile__img"
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="main">
+          <div class="dashboard">
+            <div class="dashboard__title">
+              <p>Dashboard</p>
+            </div>
+            <ul class="dashboard__ul">
+              <li class="dashboard__li">
+                <a href="#"
+                  ><iconify-icon
+                    icon="material-symbols-light:history"
+                    width="40"
+                    height="40"
+                    class="dashboard__li__icons"
+                  ></iconify-icon>
+                  <p class="dashboard__text">Rental History</p></a
+                >
+              </li>
+              <li class="dashboard__li dashboard--active">
+                <a href="#"
+                  ><iconify-icon
+                    icon="mdi:account-multiple-plus"
+                    width="40"
+                    height="40"
+                    class="dashboard__li__icons"
+                  ></iconify-icon>
+                  <p class="dashboard__text">Booking Requests</p></a
+                >
+              </li>
+              <li class="dashboard__li">
+                <a href="#"
+                  ><iconify-icon
+                    icon="material-symbols:book-outline"
+                    width="40"
+                    height="40"
+                    class="dashboard__li__icons"
+                  ></iconify-icon>
+                  <p class="dashboard__text">Bookings</p></a
+                >
+              </li>
+              <li class="dashboard__li">
+                <a href="#"
+                  ><iconify-icon
+                    icon="ion:notifications-outline"
+                    width="40"
+                    height="40"
+                    class="dashboard__li__icons"
+                  ></iconify-icon>
+                  <p class="dashboard__text">Notifications</p></a
+                >
+              </li>
+              <li class="dashboard__li">
+                <a href="#"
+                  ><iconify-icon
+                    icon="clarity:car-line"
+                    width="40"
+                    height="40"
+                    class="dashboard__li__icons"
+                  ></iconify-icon>
+                  <p class="dashboard__text">My Cars</p></a
+                >
+              </li>
+            </ul>
+            <li class="dashboard__li__log">
+              <a href="#">
+                <iconify-icon
+                  icon="material-symbols:logout"
+                  width="40"
+                  height="40"
+                  class="dashboard__li__icons"
+                ></iconify-icon>
+                <p class="dashboard__text">Logout</p>
+              </a>
+            </li>
+          </div>
+          <!-- Booking Requests -->
+          <div class="main__content">
+            <div class="page__title--mobile">
+              <p>Booking Requests</p>
+            </div>
+            <div class="booking__request">
+              <div class="booking__request__header">
+                <div class="booking__request__title">
+                  <p>Requests</p>
+                </div>
+                <div class="booking__request__dropdown">
+                  <label for="myDropdown"></label>
+                  <select id="myDropdown" name="myDropdown">
+                    <option value="option1">This Week</option>
+                    <option value="option2">This Month</option>
+                    <option value="option3">This Year</option>
+                  </select>
+                </div>
+              </div>
+              <div class="booking__request__table">
+                <div class="booking__request__table__container">
+                  <div class="row__header--flex">
+                    <div class="row__header">
+                      <p>User's Name</p>
+                    </div>
+                    <div class="row__header--carname">
+                      <p>Car Name</p>
+                    </div>
+                    <div class="row__header"><p>Booking Date</p></div>
+                    <div class="row__header--status"><p>Status</p></div>
+                  </div>
+
+                  <!-- Mobile View -->
+
+                  <div class="row__mobile">
+                    <div class="row">
+                      <div class="row_data--user-car">
+                        <div class="row_data">
+                          <div class="user-name">
+                            <img
+                              src="Images/portrait.jpg"
+                              alt="User Profile"
+                              class="profile__img"
+                            />
+                            <p class="user-name--name">Charolette Andrews</p>
+                          </div>
+                        </div>
+                        <div class="row_data--carname">
+                          <p>Volkswagen ID.4</p>
+                        </div>
+                      </div>
+                      <div class="row_data--date-status">
+                        <div class="row_data--bookingdate">
+                          <div class="row__data--date">
+                            <p>Dec 3,2023</p>
+                          </div>
+                          <i class="fa-solid fa-arrow-right"></i>
+                          <div class="row__data--date">
+                            <p>Dec 7,2023</p>
+                          </div>
+                        </div>
+                        <div class="row__data--status">
+                          <div class="row__data--status_accept">
+                            <p>Accept</p>
+                          </div>
+                          <div class="row__data--status_decline">
+                            <p>Decline</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data--user-car">
+                        <div class="row_data">
+                          <div class="user-name">
+                            <img
+                              src="Images/portrait.jpg"
+                              alt="User Profile"
+                              class="profile__img"
+                            />
+                            <p class="user-name--name">Charolette Andrews</p>
+                          </div>
+                        </div>
+                        <div class="row_data--carname">
+                          <p>Volkswagen ID.4</p>
+                        </div>
+                      </div>
+                      <div class="row_data--date-status">
+                        <div class="row_data--bookingdate">
+                          <div class="row__data--date">
+                            <p>Dec 3,2023</p>
+                          </div>
+                          <i class="fa-solid fa-arrow-right"></i>
+                          <div class="row__data--date">
+                            <p>Dec 7,2023</p>
+                          </div>
+                        </div>
+                        <div class="row__data--status">
+                          <div class="row__data--status_accept">
+                            <p>Accept</p>
+                          </div>
+                          <div class="row__data--status_decline">
+                            <p>Decline</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data--user-car">
+                        <div class="row_data">
+                          <div class="user-name">
+                            <img
+                              src="Images/portrait.jpg"
+                              alt="User Profile"
+                              class="profile__img"
+                            />
+                            <p class="user-name--name">Charolette Andrews</p>
+                          </div>
+                        </div>
+                        <div class="row_data--carname">
+                          <p>Volkswagen ID.4</p>
+                        </div>
+                      </div>
+                      <div class="row_data--date-status">
+                        <div class="row_data--bookingdate">
+                          <div class="row__data--date">
+                            <p>Dec 3,2023</p>
+                          </div>
+                          <i class="fa-solid fa-arrow-right"></i>
+                          <div class="row__data--date">
+                            <p>Dec 7,2023</p>
+                          </div>
+                        </div>
+                        <div class="row__data--status">
+                          <div class="row__data--status_accept">
+                            <p>Accept</p>
+                          </div>
+                          <div class="row__data--status_decline">
+                            <p>Decline</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data--user-car">
+                        <div class="row_data">
+                          <div class="user-name">
+                            <img
+                              src="Images/portrait.jpg"
+                              alt="User Profile"
+                              class="profile__img"
+                            />
+                            <p class="user-name--name">Charolette Andrews</p>
+                          </div>
+                        </div>
+                        <div class="row_data--carname">
+                          <p>Volkswagen ID.4</p>
+                        </div>
+                      </div>
+                      <div class="row_data--date-status">
+                        <div class="row_data--bookingdate">
+                          <div class="row__data--date">
+                            <p>Dec 3,2023</p>
+                          </div>
+                          <i class="fa-solid fa-arrow-right"></i>
+                          <div class="row__data--date">
+                            <p>Dec 7,2023</p>
+                          </div>
+                        </div>
+                        <div class="row__data--status">
+                          <div class="row__data--status_accept">
+                            <p>Accept</p>
+                          </div>
+                          <div class="row__data--status_decline">
+                            <p>Decline</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Desktop View -->
+                  <div class="row__desktop">
+                    <div class="row">
+                      <div class="row_data">
+                        <div class="user-name">
+                          <img
+                            src="Images/portrait.jpg"
+                            alt="User Profile"
+                            class="profile__img"
+                          />
+                          <p class="user-name--name">Charolette Andrews</p>
+                        </div>
+                      </div>
+                      <div class="row_data--carname">
+                        <p>Volkswagen ID.4</p>
+                      </div>
+
+                      <div class="row_data--bookingdate">
+                        <div class="row__data--date">
+                          <p>Dec 3,2023</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <div class="row__data--date">
+                          <p>Dec 7,2023</p>
+                        </div>
+                      </div>
+                      <div class="row__data--status">
+                        <div class="row__data--status_accept">
+                          <p>Accept</p>
+                        </div>
+                        <div class="row__data--status_decline">
+                          <p>Decline</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data">
+                        <div class="user-name">
+                          <img
+                            src="Images/portrait.jpg"
+                            alt="User Profile"
+                            class="profile__img"
+                          />
+                          <p class="user-name--name">Charolette Andrews</p>
+                        </div>
+                      </div>
+                      <div class="row_data--carname">
+                        <p>Volkswagen ID.4</p>
+                      </div>
+
+                      <div class="row_data--bookingdate">
+                        <div class="row__data--date">
+                          <p>Dec 3,2023</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <div class="row__data--date">
+                          <p>Dec 7,2023</p>
+                        </div>
+                      </div>
+                      <div class="row__data--status">
+                        <div class="row__data--status_accept">
+                          <p>Accept</p>
+                        </div>
+                        <div class="row__data--status_decline">
+                          <p>Decline</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data">
+                        <div class="user-name">
+                          <img
+                            src="Images/portrait.jpg"
+                            alt="User Profile"
+                            class="profile__img"
+                          />
+                          <p class="user-name--name">Charolette Andrews</p>
+                        </div>
+                      </div>
+                      <div class="row_data--carname">
+                        <p>Volkswagen ID.4</p>
+                      </div>
+
+                      <div class="row_data--bookingdate">
+                        <div class="row__data--date">
+                          <p>Dec 3,2023</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <div class="row__data--date">
+                          <p>Dec 7,2023</p>
+                        </div>
+                      </div>
+                      <div class="row__data--status">
+                        <div class="row__data--status_accept">
+                          <p>Accept</p>
+                        </div>
+                        <div class="row__data--status_decline">
+                          <p>Decline</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="row_data">
+                        <div class="user-name">
+                          <img
+                            src="Images/portrait.jpg"
+                            alt="User Profile"
+                            class="profile__img"
+                          />
+                          <p class="user-name--name">Charolette Andrews</p>
+                        </div>
+                      </div>
+                      <div class="row_data--carname">
+                        <p>Volkswagen ID.4</p>
+                      </div>
+
+                      <div class="row_data--bookingdate">
+                        <div class="row__data--date">
+                          <p>Dec 3,2023</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <div class="row__data--date">
+                          <p>Dec 7,2023</p>
+                        </div>
+                      </div>
+                      <div class="row__data--status">
+                        <div class="row__data--status_accept">
+                          <p>Accept</p>
+                        </div>
+                        <div class="row__data--status_decline">
+                          <p>Decline</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&raquo;</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="logo">
+          <p class="logo__text">VR<span class="logo__text--blue">OO</span>MY</p>
+        </div>
+        <div class="footer__container">
+          <ul class="footer__ul">
+            <li class="footer__li">
+              <a href="">About</a>
+            </li>
+            <li class="footer__li">
+              <a href="">FAQ</a>
+            </li>
+            <li class="footer__li">
+              <a href="">Team</a>
+            </li>
+          </ul>
+        </div>
+        <div class="location">
+          <p>Ethiopia, Addis Ababa</p>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </body>
+</html>

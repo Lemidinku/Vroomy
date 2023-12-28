@@ -1,0 +1,468 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #fffffe;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+
+.rental__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.logo__text {
+  font-size: x-large;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  padding-top: 10px;
+}
+.logo__text--blue {
+  color: #3151f9;
+}
+
+.page__title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-right: 450px;
+}
+.page__title--mobile {
+  display: none;
+}
+
+.browse-profile {
+  display: flex;
+  margin: 10px;
+}
+
+.hamburger__menu {
+  display: none;
+}
+
+.browse {
+  margin-right: 20px;
+  width: 150px;
+  padding-top: 20px;
+}
+.browse a {
+  display: flex;
+  justify-content: center;
+}
+.fa-globe {
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.profile {
+  padding: 20px;
+}
+.profile__img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/*  Body   */
+
+.main__rental {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.main__content {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  background-color: rgba(217, 217, 217, 0.62);
+  justify-items: center;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__title {
+  padding-left: 30px;
+}
+
+.dashboard__ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.dashboard__li {
+  margin: 0 20px 20px 20px;
+}
+
+.dashboard__li__icons {
+  padding-top: 10px;
+}
+
+.dashboard__text {
+  margin-left: 9px;
+}
+
+.dashboard__li__log {
+  list-style-type: none;
+  margin-top: auto;
+}
+
+.dashboard__li__log a {
+  display: flex;
+  justify-content: center;
+  color: #e41b4b;
+}
+.dashboard__li__log a:visited {
+  color: rgba(228, 27, 75, 0.5);
+}
+
+.dashboard__li a {
+  display: flex;
+  text-decoration: none;
+}
+
+.dashboard--active {
+  border-left: 5px solid #3151f9;
+  background-color: rgba(119, 141, 253, 0.35);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.promotion-status {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  justify-items: center;
+  /* justify-content: center; */
+}
+
+.promotion__card {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  background-color: #fffffe;
+  padding: 15px 20px 10px 30px;
+  margin: 30px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.promotion__desc__title {
+  font-weight: 600;
+}
+.promotion__desc__text {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.46);
+}
+.promotion__btn {
+  padding-top: 25px;
+}
+.promotion__btn a {
+  text-decoration: none;
+  color: #fffffe;
+  padding: 10px;
+  background-color: #3151f9;
+  border-radius: 10px;
+}
+
+.status__card {
+  width: 280px;
+  margin: 30px;
+  background-color: #fffffe;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.status__card__title {
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.status__card__main__desc {
+  display: flex;
+  font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 0;
+}
+
+.status__card__main__desc__display {
+  margin-left: 70px;
+}
+.status__card__main__desc__display--booked {
+  margin-left: 80px;
+}
+
+.progress__bar {
+  background-color: #d9d9d9;
+  width: 80%;
+  border-radius: 15px;
+}
+
+.progress__bar--colored {
+  background-color: #778dfd;
+  padding: 1%;
+  text-align: right;
+  border-radius: 15px;
+  height: 5px;
+}
+.ongoing {
+  width: 70%;
+}
+.booked {
+  width: 85%;
+}
+
+.rental__history {
+  background-color: #fffffe;
+  border-radius: 10px;
+  width: 1000px;
+  margin: 30px;
+  padding: 0 20px 20px 20px;
+}
+
+.rental__history__dropdown {
+  padding-top: 15px;
+}
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #b8b6b6;
+  border-radius: 5px;
+  /* appearance: none; Remove default styles in some browsers */
+}
+
+.rental__history__header {
+  display: flex;
+  justify-content: space-between;
+}
+.rental__history__title {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.rental__history__table {
+  padding: 10px;
+}
+
+.rental__history__table__container {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.row__header {
+  font-weight: 500;
+}
+.row__header--grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.row__header--number {
+  margin-right: 100px;
+}
+.row__header--username {
+  justify-self: start;
+  /* margin-right: 100px; */
+}
+
+.user-name {
+  display: flex;
+}
+.user-name img {
+  padding-top: 5px;
+}
+.user-name--name {
+  margin-left: 30px;
+}
+
+.row__data--ongoing p {
+  color: #7436d9;
+  background-color: rgba(168, 115, 254, 0.28);
+  padding: 10px;
+  border-radius: 5px;
+}
+.row__data--finished p {
+  color: #36d95a;
+  background-color: rgba(54, 217, 90, 0.13);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pagination {
+  display: inline-block;
+  float: right; /*might cause problems*/
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.pagination a.active {
+  background-color: #778dfd;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/*Footer*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.footer__li {
+  margin-right: 20px;
+}
+
+.location {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard {
+    display: none;
+  }
+  .promotion-status {
+    display: none;
+  }
+
+  .logo__text {
+    font-size: 16;
+  }
+  .page__title {
+    display: none;
+  }
+  .page__title--mobile {
+    display: block;
+    text-align: left;
+    width: 100vw;
+    margin-left: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  .rental__history {
+    width: fit-content;
+    margin: 0;
+    padding-left: 5px;
+  }
+
+  .main__rental {
+    width: fit-content;
+  }
+  .main__content {
+    background-color: #fffffe;
+    justify-items: start;
+    width: fit-content;
+  }
+
+  .row__header--number {
+    display: none;
+  }
+  .row_data--number {
+    display: none;
+  }
+  .row__header--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 20px;
+  }
+
+  .rental__nav {
+    width: 100vw;
+  }
+  .browse {
+    display: none;
+  }
+  .hamburger__menu {
+    display: block;
+    padding-top: 30px;
+  }
+  .browse-profile {
+    margin: 10px 0 0 0;
+  }
+
+  .rental__history__header {
+    width: 90vw;
+  }
+  .rental__history__dropdown {
+    padding-top: 25px;
+  }
+  .rental__history__table {
+    padding-left: 0;
+    width: 95vw;
+  }
+
+  .user-name img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding-top: 15px;
+  }
+
+  .row {
+    justify-content: start;
+  }
+
+  .row_data--username {
+    width: min-content;
+    padding-right: 30px;
+  }
+
+  .row_data--carname {
+    width: min-content;
+    padding-right: 30px;
+  }
+
+  .user-name--name {
+    margin-left: 5px;
+  }
+
+  footer {
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .footer__container {
+    margin-left: 25%;
+  }
+  footer .logo {
+    margin-left: 7rem;
+  }
+  .location {
+    margin-left: 7rem;
+  }
+}
