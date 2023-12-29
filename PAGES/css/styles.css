@@ -18,17 +18,13 @@
     display: none;
   }
 
-  .resume-skill__tables {
+  .cars {
     grid-template-columns: 1fr 1fr;
-  }
-  .resume-skill__tables__table {
-    align-self: stretch;
-  }
-  .car-card a {
-    align-self: flex-end;
-    justify-self: flex-end;
   }
 }
 
 @media (min-width: 1024px) {
+  .cars {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

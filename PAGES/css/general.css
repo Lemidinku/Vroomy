@@ -82,6 +82,9 @@ p {
   font-size: 1.6rem;
   line-height: 1.6;
 }
+.p-3 {
+  letter-spacing: 0.08rem;
+}
 
 .h-1 {
   font-size: 3.6rem;
