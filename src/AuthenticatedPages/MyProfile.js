@@ -8,10 +8,8 @@ import "../styles/profile.css"
 // temporary imports
 import carImage from "../images/car.png"
 import userPhoto from "../images/userPhoto.png"
-import starImage from "../images/star.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function MyProfile() {
