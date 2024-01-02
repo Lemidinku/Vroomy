@@ -335,6 +335,9 @@
 .star {
   color: var(--lightest-dark);
 }
+.star--big {
+  font-size: 2.4rem;
+}
 .star--checked {
   color: var(--primary-default) !important;
 }
@@ -390,5 +393,144 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 6.4rem 3.2rem 3.2rem;
+  margin: 14.4rem 3.2rem 3.2rem;
+}
+.about-car {
+  max-width: 30%;
+  gap: 3.2rem;
+  justify-self: flex-start;
+  justify-items: center;
+}
+.about-car__car-images {
+  gap: 1.6rem;
+  justify-items: center;
+}
+.about-car__car-images__main {
+  max-width: 90%;
+  border-radius: 9px;
+}
+.about-car__car-images__additionals {
+  gap: 1.6rem;
+  align-items: stretch;
+  grid-template-columns: 1fr 1fr 1fr;
+  img {
+    height: 100%;
+  }
+}
+
+.about-car__description {
+  gap: 1.6rem;
+  div {
+    gap: 3.2rem;
+  }
+  width: 90%;
+}
+
+.checkbox--display-only {
+  border-color: #fff;
+  color: var(--primary-default);
+  gap: 0.6rem;
+}
+.about-car__description__specification {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-left: 3.2rem;
+}
+.about-car__description__additional-features {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-left: 3.2rem;
+}
+.owner-rating {
+  justify-items: center;
+  gap: 1.6rem;
+}
+.star-container {
+  gap: 0.6rem;
+}
+.deal {
+  width: 30%;
+  justify-items: center;
+  gap: 6.4rem;
+  align-self: flex-start;
+  justify-self: flex-end;
+}
+.deal__booking {
+  justify-items: center;
+  gap: 2.4rem;
+  padding: 1rem;
+  border: var(--lightest-dark) solid 2px;
+  .btn--primary {
+    width: 90%;
+  }
+}
+.calendar {
+  width: 28rem;
+  justify-items: stretch;
+}
+.calendar__header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+.calendar__header .btn {
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 1.9rem;
+  border: var(--lightest-dark) solid 2px;
+}
+
+.calendar__header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar__weeks {
+  padding: 2rem 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  li {
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+    font-weight: 500;
+    cursor: default;
+  }
+}
+.calendar__days {
+  padding: 0 2rem 2rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar__days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+}
+.calendar__days li.inactive {
+  color: #aaa;
+}
+.calendar__days li.active {
+  color: #fff;
+}
+
+.calendar__days li.unavailable {
+  color: #e71414;
+}
+.calendar__days li.active::before {
+  content: "";
+  z-index: -1;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-default);
 }
