@@ -129,3 +129,6 @@ p {
 .section-container {
   gap: 3.2rem;
 }
+.relative {
+  position: relative;
+}

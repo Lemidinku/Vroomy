@@ -405,9 +405,17 @@ footer {
   gap: 1.6rem;
   justify-items: center;
 }
+.car-images--owner {
+  gap: 1.6rem;
+  justify-items: center;
+  justify-self: center;
+  width: 40%;
+}
 .about-car__car-images__main {
   max-width: 90%;
   border-radius: 9px;
+}
+.car-images--owner {
 }
 .about-car__car-images__additionals {
   gap: 1.6rem;
@@ -433,12 +441,14 @@ footer {
 }
 .about-car__description__specification {
   grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
+  row-gap: 0.6rem;
+  column-gap: 3.2rem;
   margin-left: 3.2rem;
 }
 .about-car__description__additional-features {
   grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
+  row-gap: 0.6rem;
+  column-gap: 3.2rem;
   margin-left: 3.2rem;
 }
 .owner-rating {
@@ -533,4 +543,33 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-default);
+}
+
+.edit-btn {
+  position: absolute;
+  padding: 0.5rem;
+  z-index: 10;
+  right: -1rem;
+  top: -1rem;
+  background-color: #fff;
+}
+.edit-btn--bottom {
+  top: 90% !important;
+}
+
+.about-car--owner {
+  grid-template-columns: 1fr 1fr;
+  gap: 14.4rem;
+  justify-self: center;
+}
+.save-and-cancel {
+  justify-self: center;
+  align-items: stretch;
+  .btn {
+    font-size: 1.4rem;
+  }
+  .btn--primary {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
 }
