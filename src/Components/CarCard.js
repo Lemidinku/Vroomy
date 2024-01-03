@@ -12,12 +12,30 @@ import {
 import carImage from "./g-class pick up.jpg";
 import OwnerprofileImage from "./profile-sample.png";
 
-const CarCard = () => {
+const CarCard = ({ car }) => {
+  const generalCarImageUrl =
+    "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/car_images/";
+  const generalAvatarUrl =
+    "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/avatars/";
+  console.log(car.is_electric);
   return (
-    <div className="car-card car-card--electric shadow rounded">
-      <img className="car-card__image" src={carImage} alt="g-class pick up" />
+    <div className="car-card shadow rounded">
+      <div className="car-card__image-container">
+        {car.is_electric && (
+          <div className="car-card__electric">
+            <p>Electric</p>
+          </div>
+        )}
+        <img
+          className="car-card__image"
+          src={
+            car.photo_url_1 ? generalCarImageUrl + car.photo_url_1 : carImage
+          }
+          alt="Car Image"
+        />
+      </div>
       <div className="car-card__text grid">
-        <h2 className="p-2">Mercedice G-class 2015</h2>
+        <h2 className="p-2">{`${car.make_and_model} ${car.year}`}</h2>
 
         <div className="car-card__description">
           <ul>
@@ -26,7 +44,7 @@ const CarCard = () => {
                 className="car-card__description__icon"
                 icon={faCar}
               />
-              <p>Convertable</p>
+              <p>{car.type}</p>
             </li>
             <li className="flex-start">
               <FontAwesomeIcon
@@ -34,7 +52,7 @@ const CarCard = () => {
                 icon={faChair}
               />
               <p>
-                <span>5 </span> Seats
+                <span>{car.seating_capacity} </span> Seats
               </p>
             </li>
             <li className="flex-start">
@@ -42,7 +60,7 @@ const CarCard = () => {
                 className="car-card__description__icon"
                 icon={faGears}
               />
-              <p>Manual</p>
+              <p>{car.transmission_type}</p>
             </li>
             <li className="flex-start">
               <FontAwesomeIcon
@@ -54,12 +72,14 @@ const CarCard = () => {
           </ul>
           <div className="car-card__about-owner ">
             <img
-              src={OwnerprofileImage}
+              src={
+                car.profiles.avatar_url
+                  ? generalAvatarUrl + car.profiles.avatar_url
+                  : OwnerprofileImage
+              }
               alt="profile image of owner"
-              width="60"
-              height="60"
             />
-            <p>Owner Name</p>
+            <p>{car.profiles.username}</p>
             <ol className="flex owner-stars">
               <li className="star star-checked">
                 {" "}
@@ -84,7 +104,7 @@ const CarCard = () => {
             </ol>
           </div>
         </div>
-        <p className="price">$500</p>
+        <p className="price">{car.daily_rental_fee} BR</p>
       </div>
     </div>
   );

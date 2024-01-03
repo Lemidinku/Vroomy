@@ -23,7 +23,7 @@ const Cars = () => {
     searchParams.get("search") || ""
   );
   const [seats, setSeats] = React.useState(
-    parseInt(searchParams.get("seats")) || 0
+    parseInt(searchParams.get("seats")) || 2
   );
   const [startDate, setStartDate] = React.useState(
     searchParams.get("start") || ""
@@ -42,10 +42,10 @@ const Cars = () => {
         (Headers = { "Content-Type": "application/json", method: "GET" })
       );
       const data = await res.json();
-      setCarsList(data);
+      setCarsList(data.cars);
     };
     fetchCars();
-  }, [sortParam, searchQuery, searchType, seats]);
+  }, [sortParam, searchQuery, searchType, seats, endDate, startDate, electric]);
 
   console.log(carsList);
   function genNewSearchParamString(key, value) {
@@ -97,7 +97,7 @@ const Cars = () => {
   };
 
   const changeElectric = (e) => {
-    setSearchParams(genNewSearchParamString("electric", !electric));
+    setSearchParams(genNewSearchParamString("electric", e.target.checked));
     setElectric((prev) => !prev);
   };
 
@@ -114,7 +114,7 @@ const Cars = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#F9F9F9" }}>
       <div className="search-container">
         <div className="search__section">
           <input
@@ -205,6 +205,7 @@ const Cars = () => {
                     name="start-date"
                     id="start-date"
                     min={new Date().toISOString().split("T")[0]}
+                    max={endDate || ""}
                     value={startDate}
                     onChange={changeStartDate}
                   />
@@ -272,7 +273,7 @@ const Cars = () => {
           </ul>
         </aside>
 
-        <CarsContainer style={{ width: "600px" }} />
+        <CarsContainer style={{ width: "600px" }} carsList={carsList} />
       </div>
     </div>
   );
