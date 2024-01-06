@@ -47,7 +47,6 @@ const Cars = () => {
     fetchCars();
   }, [sortParam, searchQuery, searchType, seats, endDate, startDate, electric]);
 
-  console.log(carsList);
   function genNewSearchParamString(key, value) {
     const sp = new URLSearchParams(searchParams);
     if (value === null || value == false) {
@@ -224,16 +223,16 @@ const Cars = () => {
               </ul>
             </li>
             <li className="filter__body__blocks">
-              <h4 class="p-1">Seating Capacity</h4>
+              <h4 className="p-1">Seating Capacity</h4>
               <ul>
-                <li class="filter__body__blocks__items">
+                <li className="filter__body__blocks__items">
                   {/* <MinusPlusInput inputValues= {{defaultValue:2, minValue:2, maxValue:20, incrementValue:1}} externalState =  {seats} externalSet = {setSeats} /> */}
                   <div className="minus-plus">
-                    <div class="input-group">
+                    <div className="input-group">
                       <input
                         type="button"
                         value="-"
-                        class="button-minus"
+                        className="button-minus"
                         onClick={decrement}
                       />
                       <input
@@ -242,13 +241,13 @@ const Cars = () => {
                         max=""
                         value={seats}
                         name="quantity"
-                        class="quantity-field"
+                        className="quantity-field"
                         onChange={changeSeatsParams}
                       />
                       <input
                         type="button"
                         value="+"
-                        class="button-plus"
+                        className="button-plus"
                         onClick={increment}
                       />
                     </div>

@@ -11,15 +11,22 @@ import {
 
 import carImage from "./g-class pick up.jpg";
 import OwnerprofileImage from "./profile-sample.png";
+import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const CarCard = ({ car }) => {
   const generalCarImageUrl =
     "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/car_images/";
   const generalAvatarUrl =
     "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/avatars/";
-  console.log(car.is_electric);
+
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
-    <div className="car-card shadow rounded">
+    <Link
+      className="car-card shadow rounded"
+      to={`/cars/${car.id}`}
+      state={{ search: `?${searchParams.toString()}` }}
+    >
       <div className="car-card__image-container">
         {car.is_electric && (
           <div className="car-card__electric">
@@ -106,7 +113,7 @@ const CarCard = ({ car }) => {
         </div>
         <p className="price">{car.daily_rental_fee} BR</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

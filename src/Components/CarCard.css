@@ -6,6 +6,7 @@
   border: none;
 }
 .car-card {
+  all: unset;
   --primary-default: #5651e5;
   --primary-shade: #11215f;
   --default-dark: #040716;
@@ -40,7 +41,7 @@
   padding-left: 5%;
 
   .car-card__description__icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--primary-default);
     margin: 5px;
     margin-right: 20px;
@@ -50,10 +51,6 @@
 .car-card__about-owner {
   display: grid;
   justify-items: center;
-
-  .owner-stars {
-    margin-top: -30px;
-  }
 
   img {
     border-radius: 50%;

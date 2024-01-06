@@ -4,7 +4,6 @@ import CarCard from "./CarCard";
 import "./CarsContainer.css";
 
 const CarsContainer = ({ carsList }) => {
-  console.log(carsList);
   if (carsList.length === 0) {
     return <div className="cars grid">No cars found</div>;
   }
