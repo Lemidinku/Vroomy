@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>vroomy | car detaile</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <p class="header__logo is-upper p-3">vr<span>oo</span>my</p>
+        <ul class="header__nav">
+          <li>
+            <a class="header__nav__anchor flex" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 22 22"
+                fill="none"
+                class="header__nav__anchor"
+              >
+                <path
+                  d="M10.916 21C16.3924 21 20.8319 16.5228 20.8319 11C20.8319 5.47715 16.3924 1 10.916 1M10.916 21C5.43953 21 1 16.5228 1 11M10.916 21C13.7006 21 15.958 16.5228 15.958 11C15.958 5.47715 13.7006 1 10.916 1M10.916 21C8.13134 21 5.87395 16.5228 5.87395 11C5.87395 5.47715 8.13134 1 10.916 1M1 11C1 5.47715 5.43953 1 10.916 1M1 11H21M4.69748 3.11864C4.69748 3.11864 11.2801 6.16949 17.1345 3.11864M17.1345 18.8814C17.1345 18.8814 10.5519 15.8305 4.69748 18.8814"
+                  stroke="black"
+                />
+              </svg>
+              Browse
+            </a>
+          </li>
+          <li class="header__nav_CTA">
+            <a class="btn btn--primary" href="#">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="flex article-container">
+      <section class="about-car grid">
+        <div class="about-car__car-images grid">
+          <img
+            class="about-car__car-images__main"
+            src="./images/front.webp"
+            alt="front view of car selected"
+          />
+          <ul class="grid about-car__car-images__additionals">
+            <li>
+              <img src="images/inside.jpg" alt="" class="shadow rounded" />
+            </li>
+            <li>
+              <img src="./images/rear.jpeg" alt="" class="shadow rounded" />
+            </li>
+            <li>
+              <img
+                src="./images/g-class pick up.jpg"
+                alt=""
+                class="shadow rounded"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="grid about-car__description">
+          <h1 class="h-2">Car Name</h1>
+          <ul class="grid about-car__description__additional-features">
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+          </ul>
+          <h2 class="h-2">Features</h2>
+          <ul class="grid about-car__description__additional-features">
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+            <li>
+              <p>specification</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="grid deal">
+        <div class="deal__booking grid rounded">
+          <p class="price">$calculated price</p>
+          <div class="flex section-container">
+            <button class="btn">
+              Sart
+              <i class="fa-solid fa-angle-down"></i></button
+            ><button class="btn">
+              End
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+          </div>
+          <button class="btn btn--primary">Book</button>
+        </div>
+        <div>
+          <p class="p-3">Check availabilty</p>
+          <div class="calendar grid rounded shadow">
+            <header class="calendar__header">
+              <span id="prev" class="material-symbols-rounded btn"
+                >chevron_left</span
+              >
+              <p class="current-date"></p>
+              <span id="next " class="material-symbols-rounded btn"
+                >chevron_right</span
+              >
+            </header>
+            <ul class="calendar__weeks">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+            <ul class="calendar__days"></ul>
+          </div>
+        </div>
+        <div class="grid owner-rating">
+          <img
+            src="./images/profile-sample.png"
+            alt="profile image of owner"
+            width="60"
+            height="60"
+          />
+          <ol class="star-container flex">
+            <li class="fa fa-star star--checked star--big"></li>
+            <li class="fa fa-star star--checked star--big"></li>
+            <li class="fa fa-star star--checked star--big"></li>
+            <li class="fa fa-star star star--big"></li>
+            <li class="fa fa-star star star--big"></li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="header__logo is-upper p-3">vr<span>oo</span>my</p>
+      <p>
+        <a href="#" class="p-3">About</a> | <a href="#" class="p-3">Teams</a> |
+        <a href="#" class="p-3">FAQ's</a>
+      </p>
+      <div class="flex">
+        <img
+          src="./images/ethio-flag.png"
+          alt="Ethiopian flag"
+          height="30"
+          width="30"
+          class="circle"
+        />
+        <p class="p-3">Ethiopia <span>|</span> Addis Ababa</p>
+      </div>
+    </footer>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/toggleButton.js"></script>
+    <script src="./scripts/calender.js"></script>
+  </body>
+</html>
