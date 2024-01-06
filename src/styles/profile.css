@@ -1,0 +1,232 @@
+.profile * {
+    margin: 0;
+    padding: 0;
+}
+
+.profile {
+    margin: 4.313em 3.125% 3.125em 9.028%;
+    display: grid;
+    grid-template: 100% / 38.056% 38.056%;
+    column-gap: 14.375%;
+}
+
+.user__photoAndRating {
+    margin-bottom: 1.563em;
+    display: flex;
+    align-items: center;
+    gap: 4.01%;
+}
+
+
+.user__photoAndRating__rating {
+    display: flex;
+    flex-direction: column;
+    gap: 2.92%;
+}
+
+.user__photoAndRating__rating__stars {
+    display: flex;
+}
+
+.rating__star {
+    width: 1.25em;
+    height: 1.25em;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating__star--colored {
+    width: 1.25em;
+    height: 1.25em;
+    font-size: 2rem;
+    color: blue;
+}
+
+.user__photoAndRating__rating__numberOfStars {
+    padding-left: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.user__photo__image {
+    width: max(100px,10vw);
+    height: max(100px,10vw);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user__name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.2em;
+}
+
+.user__name > input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0.2rem;
+    outline:blue;
+    height: 2rem;
+    background-color:transparent;
+}
+
+.user__name > input::placeholder {
+    font-size: 2rem;
+}
+
+.user__name > input:read-only {
+    border:none;
+    background-color:transparent;
+    outline:none;
+}
+.user__name > input:read-only::placeholder {
+    font-size: 2rem;
+    font-weight: 900;
+    color:black;
+    
+}
+.user__joiningDate {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
+}
+
+.info {
+    margin-top: 5.375em;
+}
+
+.info__heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    opacity: 48%;
+    font-size: 1rem;
+    margin-bottom: 2.188em;
+    padding-left: 1.642%;
+}
+
+.info__list {
+    display: flex;
+    align-items: center;
+    gap: 23.723%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+
+}
+
+.info__list__ul {
+    list-style-type: none;
+}
+
+.info__list__li {
+    margin-bottom: 3.167em;
+}
+
+.info__list__li__input {
+    width: 95%;
+    padding: 0.25em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    border-color: blue;
+}
+
+.info__list__li__input:read-only {
+    border:none;
+    
+   
+}
+
+.info__list__li__input:read-only::placeholder {
+    font-size: 1rem;
+    text-overflow: wrap;
+    font-weight: 700;
+    color:black;
+    
+}
+
+
+.saveCofirmation  {
+    display: flex;
+    align-items: center;
+    gap: 8.759%;
+    padding-left: 11.31%;
+    font-family: 'Roboto', sans-serif;
+    margin: 2.188em auto;
+}
+
+.saveConfirmation__saveButton,
+.saveConfirmation__cancelButton,
+.editProfile__button {
+    all:unset;
+    border-radius: 0.625em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer
+}
+
+.saveConfirmation__saveButton {
+    margin: 2.625em 0;
+    padding: 0.625em;
+    background: rgba(49, 81, 249, 0.43);
+}
+
+.saveConfirmation__cancelButton {
+    margin: 2.625em 0;
+    padding: 0.625em;
+    background: rgba(49, 81, 249, 0.16);
+}
+
+
+.editProfile__button {
+    margin: 2.625em 0 6em 58.76%;
+    padding: 0.625em 6.39%;
+    color: #FFFFFF;
+    background: #3B5BDB;
+}
+
+.carHeading {
+    margin: 0 0 0.929em 7.85%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
+}
+
+.car {
+    background: rgba(217, 217, 217, 0.23);
+    width: 100%;
+    height: 61.12%;
+}
+
+.car__image {
+    width: 100%;
+    height: 67.02%;
+}
+
+.car__name {
+    margin: 0.8125em 0 1.0625em 3.47%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.car__price {
+    margin: 0.5em 0 1em 73.18%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.user__photo__image {
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 769px) {
+    .profile {
+        grid-template: auto auto / 100%;
+    }
+
+
+}
+
