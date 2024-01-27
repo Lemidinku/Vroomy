@@ -1,0 +1,92 @@
+/* .row__mobile--booking {
+    display: none;
+  } */
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .row__header {
+    font-weight: 500;
+  }
+  .row__header--flex {
+    /* display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center; */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .row__header--status {
+    margin-right: 50px;
+  }
+  
+  .row__header--carname {
+    margin-left: 15px;
+  }
+  
+  .row .user-name {
+    display: flex;
+  }
+  .user-name img {
+    padding-top: 5px;
+  }
+  .user-name--name {
+    margin-left: 30px;
+  }
+  
+  .row_data--withdrawal {
+    margin-right: 15px;
+  }
+  
+  .row_data--withdrawal p {
+    color: #d93636;
+    background-color: rgba(255, 83, 83, 0.3);
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+  
+  .row_data--bookingdate {
+    display: flex;
+  }
+  .row__data--date p {
+    border: 1px solid #d8dae5;
+    padding: 6px 5px 6px 6px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  .fa-arrow-right {
+    padding-top: 25px;
+  }
+  
+  .row_data--carname {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+  
+    .row--mobile {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+    }
+    .row_data--user-car {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+    }
+    .row_data--date-status {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      justify-items: center;
+    }
+  
+    .row_data--carname--booking{
+      margin-right: 20px;
+    }
+  
+    .user-name--name--mobile {
+      margin-left: 5px;
+    }
+  }

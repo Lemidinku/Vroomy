@@ -1,0 +1,272 @@
+.booking {
+  background-color: #fffffe;
+  border-radius: 10px;
+  width: 1000px;
+  margin: 30px;
+  padding: 0 20px 20px 20px;
+}
+
+.booking__dropdown {
+  padding-top: 15px;
+}
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #b8b6b6;
+  border-radius: 5px;
+  /* appearance: none; Remove default styles in some browsers */
+}
+
+.booking__header {
+  display: flex;
+  justify-content: space-between;
+}
+.booking__title {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.booking__table {
+  padding: 10px;
+}
+
+.booking__table__container {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+.row__mobile--booking {
+  display: none;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row__header {
+  font-weight: 500;
+}
+.row__header--flex {
+  /* display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.row__header--status {
+  margin-right: 50px;
+}
+
+.row__header--carname {
+  margin-left: 15px;
+}
+
+.row .user-name {
+  display: flex;
+}
+.user-name img {
+  padding-top: 5px;
+}
+.user-name--name {
+  margin-left: 30px;
+}
+
+.row_data--withdrawal {
+  margin-right: 15px;
+}
+
+.row_data--withdrawal p {
+  color: #d93636;
+  background-color: rgba(255, 83, 83, 0.3);
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.row_data--bookingdate {
+  display: flex;
+}
+.row__data--date p {
+  border: 1px solid #d8dae5;
+  padding: 6px 5px 6px 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.fa-arrow-right {
+  padding-top: 25px;
+}
+
+.row_data--carname {
+  margin-right: 20px;
+}
+
+.pagination {
+  display: inline-block;
+  float: right; /*might cause problems*/
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.pagination a.active {
+  background-color: #778dfd;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard {
+    display: none;
+  }
+  .promotion-status {
+    display: none;
+  }
+  .row__desktop {
+    display: none;
+  }
+  .row__mobile--booking {
+    display: block;
+  }
+  .logo__text {
+    font-size: 16;
+  }
+  .booking__title {
+    display: none;
+  }
+  .page__title--mobile {
+    display: block;
+    text-align: left;
+    width: 100vw;
+    margin-left: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  .booking__nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .browse {
+    display: none;
+  }
+  .hamburger__menu {
+    display: block;
+    padding-top: 30px;
+  }
+  .browse-profile {
+    margin: 10px 0 0 0;
+  }
+
+  .main__content {
+    background-color: #fffffe;
+    justify-items: start;
+    width: fit-content;
+  }
+
+  .booking {
+    width: fit-content;
+    margin: 0;
+    padding-left: 5px;
+  }
+
+  .booking__header {
+    width: 90vw;
+  }
+  .booking__dropdown {
+    padding-top: 25px;
+  }
+  .booking__table__container {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .row__header--flex {
+    display: none;
+  }
+
+  .row--mobile {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+  }
+  .row_data--user-car {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .row_data--date-status {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+  }
+
+  .row_data--carname--booking {
+    margin-right: 20px;
+  }
+
+  .user-name--name--mobile {
+    margin-left: 5px;
+  }
+
+  .pagination {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    place-content: center;
+  }
+  .footer__container {
+    margin-left: 25%;
+  }
+  footer .logo {
+    margin-left: 7rem;
+  }
+  .location {
+    margin-left: 7rem;
+  }
+
+  .mobile-menu {
+    flex-direction: column;
+  }
+
+  .close-btn {
+    margin: 10px 20px;
+  }
+
+  .dashboard__ul-mobile {
+    list-style-type: none;
+  }
+
+  .dashboard__li-mobile a {
+    display: flex;
+  }
+
+  .dashboard__li-mobile__icons {
+    padding-top: 15px;
+  }
+
+  .dashboard__li-mobile__log {
+    margin-top: auto;
+    list-style-type: none;
+  }
+
+  .dashboard__li-mobile__log a {
+    display: flex;
+    justify-content: center;
+    color: #e41b4b;
+  }
+}

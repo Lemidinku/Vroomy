@@ -1,0 +1,82 @@
+.rental__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    margin-left: 2rem;
+  }
+  
+  .logo__text {
+    font-size: x-large;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .logo__text--blue {
+    color: #3151f9;
+  }
+  
+  .page__title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-right: 450px;
+  }
+  .page__title--mobile {
+    display: none;
+  }
+  
+  .browse-profile {
+    display: flex;
+    margin: 10px;
+  }
+  
+  .hamburger__menu {
+    display: none;
+  }
+  
+  .browse {
+    margin-right: 20px;
+    width: 150px;
+    /* padding-top: 20px; */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .browse__text {
+    margin-top: 1.5rem;
+  }
+  
+  .globe {
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+  
+  .profile {
+    padding: 20px;
+    padding-top: 10px;
+  }
+  .profile__img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  /*md*/
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+  }
+  
+  .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
