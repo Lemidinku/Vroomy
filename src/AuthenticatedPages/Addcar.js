@@ -10,7 +10,6 @@ const AddCar = () => {
   return (
     <>
       <div className="container">
-        <Navbar pageTitle={"Add Car"} />
         <main>
           <Dashboard />
           <div className="main__content">
@@ -177,7 +176,6 @@ const AddCar = () => {
           </div>
         </main>
       </div>
-      <Footer />
     </>
   );
 };

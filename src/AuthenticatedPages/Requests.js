@@ -1,14 +1,41 @@
 import "./Requests.css";
-import Navbar from "../../src/Components/NavBar/Navbar";
 import Dashboard from "../../src/Components/Dashboard/Dashboard";
-import Footer from "../../src/Components/Footer/Footer";
 import RequestsRow from "../../src/Components/RequestsRow/RequestsRow";
 import RequestsRowMob from "../../src/Components/RequestsRow/RequestsRowMob";
+import React, { useEffect, useContext } from "react";
+import { AuthContext } from "../AuthProvider";
+
 const Requests = () => {
+  const [requestsList, setRequestsList] = React.useState([]);
+  const { user } = React.useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchRequests = async () => {
+      const res = await fetch(`http://localhost:9000/api/v1/requests/owner`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          user_id: user.id,
+        },
+      });
+      const data = await res.json();
+      setRequestsList(data);
+    };
+    fetchRequests();
+  }, []);
+  console.log(requestsList);
+  let requests;
+  if (requestsList.length > 0) {
+    requests = requestsList.map((request) => {
+      return <RequestsRow key={request.id} request={request} />;
+    });
+  } else {
+    requests = <p>No requests</p>;
+  }
   return (
     <>
       <div className="container">
-        <Navbar pageTitle={"Booking Requests"} />
+        {/* <Navbar pageTitle={"Booking Requests"} /> */}
         <main>
           <Dashboard />
           <div className="main__content">
@@ -54,10 +81,11 @@ const Requests = () => {
                   </div>
 
                   <div className="row__desktop">
+                    {/* <RequestsRow />
                     <RequestsRow />
                     <RequestsRow />
-                    <RequestsRow />
-                    <RequestsRow />
+                    <RequestsRow /> */}
+                    {requests}
                   </div>
                 </div>
               </div>
@@ -74,7 +102,6 @@ const Requests = () => {
           </div>
         </main>
       </div>
-      <Footer />
     </>
   );
 };

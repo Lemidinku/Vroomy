@@ -21,10 +21,12 @@ import Bookings from "./AuthenticatedPages/Bookings.js";
 import MyDashboardLayout from "./MyDashboardLayout.js";
 import Requests from "./AuthenticatedPages/Requests.js";
 import Cars from "./PublicPages/Cars.js";
+import AddCar from "./AuthenticatedPages/Addcar.js";
 
 function ContentWrapper() {
   const { user } = useContext(AuthContext);
   let account_type = user?.user_metadata.account_type;
+  console.log(account_type);
   return (
     <BrowserRouter>
       <Routes>
@@ -47,31 +49,29 @@ function ContentWrapper() {
               <Route path="cars/:carId" element={<CarDetail />} />
             </>
           )}
-          {
-            (account_type = "owner" && (
-              <>
-                <Route path="mydashboard" element={<MyDashboardLayout />}>
-                  <Route index element={<MyCars />} />
-                  <Route path="bookings" element={<Bookings />} />
-                  <Route path="requests" element={<Requests />} />
-                  <Route path="rentalhistory" element={<RentalHistory />} />
-                  <Route path=":carId" element={<MyCarDetail />} />
-                </Route>
-              </>
-            ))
-          }
-          {
-            (account_type = "renter" && (
-              // these pages will be different for renters, but used as a placeholders for now.
-              <>
-                <Route path="mydashboard" element={<MyDashboardLayout />}>
-                  <Route index element={<Bookings />} />
-                  <Route path="requests" element={<Requests />} />
-                  <Route path="rentalhistory" element={<RentalHistory />} />
-                </Route>
-              </>
-            ))
-          }
+          {account_type == "owner" && (
+            <>
+              <Route path="mydashboard" element={<MyDashboardLayout />}>
+                <Route path="" element={<MyCars />} />
+                <Route path="bookings" element={<Bookings />} />
+                <Route path="requests" element={<Requests />} />
+                <Route path="rentalhistory" element={<RentalHistory />} />
+                <Route path="addcar" element={<AddCar />} />
+
+                <Route path=":carId" element={<MyCarDetail />} />
+              </Route>
+            </>
+          )}
+          {account_type == "renter" && (
+            // these pages will be different for renters, but used as a placeholders for now.
+            <>
+              <Route path="mydashboard" element={<MyDashboardLayout />}>
+                <Route index element={<Requests />} />
+                <Route path="requests" element={<Bookings />} />
+                <Route path="rentalhistory" element={<RentalHistory />} />
+              </Route>
+            </>
+          )}
         </Route>
       </Routes>
     </BrowserRouter>

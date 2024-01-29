@@ -4,6 +4,7 @@ import Bookings from "../AuthenticatedPages/Bookings";
 import AddCar from "../AuthenticatedPages/Addcar";
 import RentalHistory from "../AuthenticatedPages/RentalHistory";
 import Requests from "../AuthenticatedPages/Requests";
+import MyCars from "../AuthenticatedPages/MyCars";
 
 function Home() {
   const navigate = useNavigate();
@@ -26,10 +27,12 @@ function Home() {
         the authentication state:
       </p>
 
-      <Bookings />
-      <AddCar />
-      <RentalHistory />
-      <Requests />
+      {/* <Bookings /> */}
+
+      {/* <AddCar /> */}
+      {/* <RentalHistory /> */}
+      {/* <Requests /> */}
+      <MyCars />
     </>
   );
 }

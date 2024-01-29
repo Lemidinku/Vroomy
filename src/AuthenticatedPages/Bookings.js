@@ -1,15 +1,41 @@
 import "./Booking.css";
 import Navbar from "../../src/Components/NavBar/Navbar";
 import Dashboard from "../../src/Components/Dashboard/Dashboard";
-import Footer from "../../src/Components/Footer/Footer";
 import BookingRow from "../../src/Components/BookingRow/BookingRow";
 import bookingPromotionAside from "../AuthenticatedPages/DashboardImages/Wavy_Bus-08_Single-09.jpg";
 import BookingRowMob from "../../src/Components/BookingRow/BookingRowMob";
+import React, { useEffect, useContext } from "react";
+import { AuthContext } from "../AuthProvider";
 const Bookings = () => {
+  const [bookingList, setBookingList] = React.useState([]);
+  const { user } = React.useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      const res = await fetch(`http://localhost:9000/api/v1/bookings/owner`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          user_id: user.id,
+        },
+      });
+      const data = await res.json();
+      setBookingList(data);
+    };
+    fetchBookings();
+  }, []);
+  console.log(bookingList);
+  let bookings;
+  if (bookingList.length > 0) {
+    bookings = bookingList.map((booking) => {
+      return <BookingRow key={booking.id} booking={booking} />;
+    });
+  } else {
+    bookings = <p>No requests</p>;
+  }
   return (
     <>
       <div className="container">
-        <Navbar pageTitle={"My Bookings"} />
         <main>
           <Dashboard />
           <div className="main__content">
@@ -103,18 +129,20 @@ const Bookings = () => {
                   {/*Mobile View*/}
 
                   <div className="row__mobile--booking">
+                    {/* <BookingRowMob />
                     <BookingRowMob />
                     <BookingRowMob />
-                    <BookingRowMob />
-                    <BookingRowMob />
+                    <BookingRowMob /> */}
+                    {bookings}
                   </div>
 
                   {/*Desktop View*/}
                   <div className="row__desktop">
+                    {/* <BookingRow />
                     <BookingRow />
                     <BookingRow />
-                    <BookingRow />
-                    <BookingRow />
+                    <BookingRow /> */}
+                    {bookings}
                   </div>
                 </div>
               </div>
@@ -131,7 +159,6 @@ const Bookings = () => {
           </div>
         </main>
       </div>
-      <Footer />
     </>
   );
 };

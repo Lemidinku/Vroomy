@@ -1,15 +1,39 @@
-import Navbar from "../Components/NavBar/Navbar";
-import Footer from "../Components/Footer/Footer";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import RentalHistoryRow from "../Components/HistoryRow/RentalHistoryRow";
 import promotionAside from "../AuthenticatedPages/DashboardImages/bwink_tsp_01_single_09.jpg";
 import "./RentalHistory.css";
-import userImg from "../AuthenticatedPages/DashboardImages/user.jpg";
+import React, { useEffect, useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider";
 
 const RentalHistory = () => {
+  const [rentalsList, setRentalsList] = useState([]);
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchRentals = async () => {
+      const res = await fetch(`http://localhost:9000/api/v1/rents/owner`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          user_id: user.id,
+        },
+      });
+      const data = await res.json();
+      setRentalsList(data);
+    };
+    fetchRentals();
+  }, []);
+  let rents;
+  if (rentalsList.length > 0) {
+    rents = rentalsList.map((rent) => {
+      return <RentalHistoryRow key={rent.rent_id} rent={rent} />;
+    });
+  } else {
+    rents = <p>No Rents</p>;
+  }
+  console.log(rentalsList);
   return (
     <div className="container">
-      <Navbar pageTitle={"Rental History"} />
       <main>
         <Dashboard />
         <div className="main__content">
@@ -22,7 +46,6 @@ const RentalHistory = () => {
                 <div className="promotion__desc__text">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolorum, explicabo.
                   </p>
                 </div>
                 <div className="promotion__btn">
@@ -81,9 +104,7 @@ const RentalHistory = () => {
             <div className="rental__history__table">
               <div className="rental__history__table__container">
                 <div className="row__header--grid">
-                  <div className="row__header row__header--number">
-                    <p>No.</p>
-                  </div>
+                  <div className="row__header row__header--number"></div>
                   <div className="row__header row__header--username">
                     <p>User's Name</p>
                   </div>
@@ -95,13 +116,14 @@ const RentalHistory = () => {
                   </div>
                 </div>
 
-                <RentalHistoryRow rentalStatus={"Ongoing"} />
+                {/* <RentalHistoryRow rentalStatus={"Ongoing"} />
 
-                <RentalHistory rentalStatus={"Finished"} />
+                <RentalHistoryRow rentalStatus={"Finished"} />
 
-                <RentalHistory rentalStatus={"Finished"} />
+                <RentalHistoryRow rentalStatus={"Finished"} />
 
-                <RentalHistory rentalStatus={"Ongoing"} />
+                <RentalHistoryRow rentalStatus={"Ongoing"} /> */}
+                {rents}
               </div>
             </div>
             <div className="pagination">
@@ -116,7 +138,6 @@ const RentalHistory = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

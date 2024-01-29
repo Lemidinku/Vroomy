@@ -59,6 +59,17 @@ const Navbar = ({ pageTitle }) => {
               <li className="dashboard__li-mobile">
                 <NavLink to="/">
                   <Icon
+                    icon="clarity:car-line"
+                    width="25"
+                    height="25"
+                    className="dashboard__li__icons"
+                  />
+                  <p className="dashboard__text">My Cars</p>
+                </NavLink>
+              </li>
+              <li className="dashboard__li-mobile">
+                <NavLink to="/rentalhistory">
+                  <Icon
                     icon="material-symbols-light:history"
                     width="25"
                     height="25"
@@ -68,7 +79,7 @@ const Navbar = ({ pageTitle }) => {
                 </NavLink>
               </li>
               <li className="dashboard__li-mobile">
-                <NavLink to="/booking-requests">
+                <NavLink to="/requests">
                   <Icon
                     icon="mdi:account-multiple-plus"
                     width="25"
@@ -101,14 +112,14 @@ const Navbar = ({ pageTitle }) => {
                 </NavLink>
               </li>
               <li className="dashboard__li-mobile">
-                <NavLink to="/my-cars">
+                <NavLink to="/">
                   <Icon
                     icon="clarity:car-line"
                     width="25"
                     height="25"
                     className="dashboard__li__icons"
                   />
-                  <p className="dashboard__text">My Cars</p>
+                  <p className="dashboard__text">Add Car</p>
                 </NavLink>
               </li>
             </ul>
