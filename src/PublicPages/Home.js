@@ -32,7 +32,7 @@ function Home() {
       {/* <AddCar /> */}
       {/* <RentalHistory /> */}
       {/* <Requests /> */}
-      <MyCars />
+      {/* <MyCars /> */}
     </>
   );
 }

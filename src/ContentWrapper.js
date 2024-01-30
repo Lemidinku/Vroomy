@@ -52,7 +52,7 @@ function ContentWrapper() {
           {account_type == "owner" && (
             <>
               <Route path="mydashboard" element={<MyDashboardLayout />}>
-                <Route path="" element={<MyCars />} />
+                <Route index element={<MyCars />} />
                 <Route path="bookings" element={<Bookings />} />
                 <Route path="requests" element={<Requests />} />
                 <Route path="rentalhistory" element={<RentalHistory />} />
