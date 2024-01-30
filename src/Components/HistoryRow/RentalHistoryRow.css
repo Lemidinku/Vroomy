@@ -1,0 +1,52 @@
+.row__history {
+  display: flex;
+  justify-content: space-around;
+}
+.user-name {
+  display: flex;
+}
+.user-name img {
+  padding-top: 5px;
+}
+.user-name--name {
+  margin-left: 30px;
+}
+
+.row__data--ongoing p {
+  color: #7436d9;
+  background-color: rgba(168, 115, 254, 0.28);
+  padding: 10px;
+  border-radius: 5px;
+}
+.row__data--finished p {
+  color: #36d95a;
+  background-color: rgba(54, 217, 90, 0.13);
+  padding: 10px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 480px) {
+  .user-name img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding-top: 15px;
+  }
+
+  .row {
+    justify-content: start;
+  }
+
+  .row_data--username {
+    width: min-content;
+    padding-right: 30px;
+  }
+
+  .row_data--carname {
+    width: min-content;
+    padding-right: 30px;
+  }
+
+  .user-name--name {
+    margin-left: 5px;
+  }
+}

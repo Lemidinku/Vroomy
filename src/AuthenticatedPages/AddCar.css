@@ -1,0 +1,309 @@
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+  }
+  
+  .page__title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-right: 450px;
+  }
+  .page__title--mobile {
+    display: none;
+  }
+  
+  .browse-profile {
+    display: flex;
+    margin: 10px;
+  }
+  
+  .hamburger__menu {
+    display: none;
+  }
+  
+  .browse {
+    margin-right: 20px;
+    width: 150px;
+    padding-top: 20px;
+  }
+  .browse a {
+    display: flex;
+    justify-content: center;
+  }
+  .fa-globe {
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+  
+  .profile {
+    padding: 20px;
+  }
+  .profile__img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  /*  Body   */
+  
+  .main__rental {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+  
+  .main__content {
+    /* display: grid;
+    grid-template-rows: repeat(2, auto); */
+    background-color: rgba(217, 217, 217, 0.62);
+    /* justify-items: center; */
+  }
+  
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard__title {
+    padding-left: 30px;
+  }
+  
+  .dashboard__ul {
+    list-style-type: none;
+    padding: 10px;
+  }
+  
+  .dashboard__li {
+    margin: 0 20px 20px 20px;
+  }
+  
+  .dashboard__li__icons {
+    padding-top: 10px;
+  }
+  
+  .dashboard__text {
+    margin-left: 9px;
+  }
+  
+  .dashboard__li__log {
+    list-style-type: none;
+    margin-top: auto;
+  }
+  
+  .dashboard__li__log a {
+    display: flex;
+    justify-content: center;
+    color: #e41b4b;
+  }
+  .dashboard__li__log a:visited {
+    color: rgba(228, 27, 75, 0.5);
+  }
+  
+  .dashboard__li a {
+    display: flex;
+    text-decoration: none;
+  }
+  
+  .dashboard--active {
+    border-left: 5px solid #3151f9;
+    background-color: rgba(119, 141, 253, 0.35);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  /*Main Content*/
+  .save__cancel {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .save__btn p {
+    margin-right: 20px;
+    padding: 10px 30px;
+    background-color: #4664ff;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 0px;
+  }
+  .cancel__btn p {
+    margin-right: 20px;
+    padding: 10px 30px;
+    background-color: rgba(119, 141, 253, 0.5);
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  
+  .input__section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .car__images {
+    margin-left: 2rem;
+  }
+  
+  .car__images__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .car__images__title p {
+    margin-top: 0;
+  }
+  
+  .car__images--top {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+  }
+  
+  .car__images--bottom {
+    width: 130px;
+    height: 110px;
+    border-radius: 8px;
+  }
+  
+  .car__images--image__bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .car__images__btn p {
+    margin-left: 5rem;
+    width: fit-content;
+    padding: 10px 10px;
+    background-color: #4664ff;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  select {
+    padding: 2px 40px 2px 2px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  input {
+    border: 0;
+  }
+  .text-input {
+    width: 200px;
+  }
+  
+  .input__form {
+    margin-left: 5rem;
+  }
+  
+  .make__model {
+    display: flex;
+    gap: 4rem;
+  }
+  .year__color {
+    display: flex;
+    gap: 4rem;
+  }
+  .seating__capacity {
+    justify-content: space-around;
+  }
+  
+  .checkboxes {
+    display: flex;
+  }
+  .checkbox--group {
+    display: flex;
+    flex-direction: column;
+  }
+  /*Footer*/
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  .footer__li {
+    margin-right: 20px;
+  }
+  
+  .location {
+    padding-top: 20px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .dashboard {
+      display: none;
+    }
+    .promotion-status {
+      display: none;
+    }
+    .input__section {
+      background-color: rgba(217, 217, 217, 0.62);
+      display: flex;
+      flex-direction: column;
+    }
+    .input__form {
+      margin: 2rem;
+    }
+    .page__title {
+      display: none;
+    }
+    .page__title--mobile {
+      display: block;
+      text-align: left;
+      width: 100vw;
+      margin-left: 50px;
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+  
+    .booking__nav {
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+    }
+    .browse {
+      display: none;
+    }
+    .hamburger__menu {
+      display: block;
+      padding-top: 30px;
+    }
+    .browse-profile {
+      margin: 10px 0 0 0;
+    }
+  
+    .main__content {
+      background-color: #fffffe;
+      justify-items: start;
+      width: fit-content;
+    }
+  
+    footer {
+      width: 100vw;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+    }
+    .footer__container {
+      margin-left: 25%;
+    }
+    footer .logo {
+      margin-left: 7rem;
+    }
+    .location {
+      margin-left: 7rem;
+    }
+  }
+  
