@@ -43,6 +43,10 @@ const SendRequest = ({ carId, daily_price }) => {
       navigate("/login");
       return;
     }
+    if (user.user_metadata.account_type !== "renter") {
+      alert("You need to be a renter to send a request");
+      return;
+    }
 
     const res = await fetch("http://localhost:9000/api/v1/requests/", {
       method: "POST",
