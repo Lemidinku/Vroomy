@@ -4,7 +4,7 @@ import profile from "../../AuthenticatedPages/DashboardImages/portrait.jpg";
 import "./Navbar.css";
 import { useState } from "react";
 
-const Navbar = ({ pageTitle }) => {
+const Navbar = ({ pageTitle, isAuthenticated }) => {
   const [Visible, setVisible] = useState(false);
   const handleHamburgerClick = () => {
     setVisible(true);
@@ -24,7 +24,7 @@ const Navbar = ({ pageTitle }) => {
           <p>{pageTitle}</p>
         </div>
         <div className="browse-profile">
-          <div className="browse">
+          <div className="browse--nav">
             <Icon icon="ph:globe" width="30" height="30" className="globe" />
             <p className="browse__text">Browse</p>
           </div>
@@ -35,9 +35,42 @@ const Navbar = ({ pageTitle }) => {
           >
             <Icon icon="solar:hamburger-menu-broken" width="30" height="30" />
           </div>
-          <div className="profile">
+
+          {isAuthenticated ? (
+            <>
+            <NavLink to="/">
+              <div className="navbar-dashboard">
+                <p>Dashboard</p>
+              </div>
+            </NavLink>
+
+            <NavLink to = "/">
+              <div className="navbar--notification">
+              <Icon icon="iconamoon:notification" width="30" height="30"/>
+              </div>
+            </NavLink>
+
+            <NavLink to = "/">
+              <div className="profile">
+                <img src={profile} alt="Profile Picture" className="profile__img" />
+              </div>
+            </NavLink>
+            </>
+            
+
+          ) : (
+            <NavLink to = "/">
+              <div className="signup-button--navbar">
+                <p>Create Account</p>
+              </div>
+            </NavLink>
+          )}
+
+
+
+          {/* <div className="profile">
             <img src={profile} alt="Profile Picture" className="profile__img" />
-          </div>
+          </div> */}
         </div>
 
         {/*Mobile Menu */}

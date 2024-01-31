@@ -36,7 +36,7 @@
     display: none;
   }
   
-  .browse {
+  .browse--nav {
     margin-right: 20px;
     width: 150px;
     /* padding-top: 20px; */
@@ -80,3 +80,24 @@
     cursor: pointer;
   }
   
+  .signup-button--navbar{
+    margin-top: 5px;
+  }
+  
+  .signup-button--navbar p{
+    border-radius: 12px;
+    padding: 10px 20px;
+    background-color: #3151f9;
+    color: white;
+  
+  }
+  
+  .navbar--notification{
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  
+  .navbar-dashboard{
+    margin-top: 10px;
+    padding: 7px 40px 7px 0px;
+  }
