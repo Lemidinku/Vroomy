@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './About.css'
 const FaqItem = ({ question, answer }) => {
     const [isActive, setIsActive] = useState(false);
   
