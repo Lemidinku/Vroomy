@@ -255,7 +255,15 @@ p {
   font-weight: 600;
   color: var(--primary-default);
 }
+
+.car-detail__owner__image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .owner-rating {
+  all: unset;
   width: 50%;
   display: flex;
   flex-direction: column;

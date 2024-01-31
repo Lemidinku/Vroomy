@@ -22,6 +22,7 @@ import MyDashboardLayout from "./MyDashboardLayout.js";
 import Requests from "./AuthenticatedPages/Requests.js";
 import Cars from "./PublicPages/Cars.js";
 import AddCar from "./AuthenticatedPages/Addcar.js";
+import PublicProfile from "./PublicPages/PublicProfile.js";
 
 function ContentWrapper() {
   const { user } = useContext(AuthContext);
@@ -47,6 +48,7 @@ function ContentWrapper() {
               <Route path="myprofile" element={<MyProfile />} />
               <Route path="notifications" element={<Notifications />} />
               <Route path="cars/:carId" element={<CarDetail />} />
+              <Route path="profile/:username" element={<PublicProfile />} />
             </>
           )}
           {account_type == "owner" && (

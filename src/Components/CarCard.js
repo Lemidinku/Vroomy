@@ -24,7 +24,7 @@ const CarCard = ({ car }) => {
   return (
     <Link
       className="car-card shadow rounded"
-      to={`/cars/${car.id}`}
+      to={`${car.id}`}
       state={{ search: `?${searchParams.toString()}` }}
     >
       <div className="car-card__image-container">

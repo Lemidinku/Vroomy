@@ -27,6 +27,7 @@ const CarDetail = () => {
   const generalAvatarUrl =
     "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/avatars/";
   const [car, setCar] = useState(null);
+  const [activeImage, setActiveImage] = React.useState(2);
   const { carId } = useParams();
   const location = useLocation();
 
@@ -41,7 +42,8 @@ const CarDetail = () => {
   }, []);
 
   let back_to_cars = location.state?.search || "";
-  console.log(car);
+  let activeImageUrl = `photo_url_${activeImage}`;
+  console.log(activeImage);
   return (
     <>
       {car ? (
@@ -56,18 +58,49 @@ const CarDetail = () => {
             <div className="about-car__car-images grid">
               <img
                 className="about-car__car-images__main"
-                src={frontImage}
+                src={
+                  car[activeImageUrl]
+                    ? generalCarImageUrl + car[activeImageUrl]
+                    : frontImage
+                }
                 alt="front view of car selected"
               />
               <ul className="grid about-car__car-images__additionals">
                 <li>
-                  <img src={insideImage} alt="" className="shadow rounded" />
+                  <img
+                    src={
+                      car?.photo_url_2
+                        ? generalCarImageUrl + car?.photo_url_2
+                        : insideImage
+                    }
+                    alt=""
+                    className="shadow rounded"
+                    onClick={() => setActiveImage(1)}
+                  />
                 </li>
                 <li>
-                  <img src={rearImage} alt="" className="shadow rounded" />
+                  <img
+                    src={
+                      car?.photo_url_1
+                        ? generalCarImageUrl + car?.photo_url_1
+                        : frontImage
+                    }
+                    alt=""
+                    className="shadow rounded"
+                    onClick={() => setActiveImage(2)}
+                  />
                 </li>
                 <li>
-                  <img src={frontImage} alt="" className="shadow rounded" />
+                  <img
+                    src={
+                      car?.photo_url_3
+                        ? generalCarImageUrl + car?.photo_url_3
+                        : rearImage
+                    }
+                    alt=""
+                    className="shadow rounded"
+                    onClick={() => setActiveImage(3)}
+                  />
                 </li>
               </ul>
             </div>
@@ -128,12 +161,17 @@ const CarDetail = () => {
                 <p className="car-detail__price">
                   <span>5000</span>Br
                 </p>
-                <footer className="owner-rating">
+                <Link
+                  to={`/profile/${car?.profiles.username}`}
+                  className="owner-rating"
+                >
                   <img
-                    src={profileImage}
-                    alt="profile image of owner"
-                    width="60"
-                    height="60"
+                    src={
+                      car?.profiles.avatar_url
+                        ? generalAvatarUrl + car.profiles.avatar_url
+                        : profileImage
+                    }
+                    className="car-detail__owner__image"
                   />
                   <p>{car?.profiles.username}</p>
                   <ol className="star-container flex">
@@ -152,7 +190,7 @@ const CarDetail = () => {
                     <FontAwesomeIcon className="star--big" icon={faStar} />
                     <FontAwesomeIcon className="star--big" icon={faStar} />
                   </ol>
-                </footer>
+                </Link>
               </div>
             </div>
           </section>
