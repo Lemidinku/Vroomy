@@ -72,10 +72,11 @@ const AddCar = () => {
           user_id: user.id,
         },
         body: JSON.stringify({
-          make_and_model: carInfo.make + " " + carInfo.Model,
+          make_and_model: carInfo.make + " " + carInfo.model,
           owner_id: user.id,
           year: carInfo.year,
           color: carInfo.color,
+          type: carInfo.type,
           seating_capacity: carInfo.seatingCapacity,
           daily_rental_fee: carInfo.dailyRentalFee,
           location: carInfo.location,
