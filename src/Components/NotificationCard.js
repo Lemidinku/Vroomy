@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "../AuthenticatedPages/Notifications.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
 
 const MainContent = ({ notification, car }) => {
   let leftContent = "";
@@ -17,6 +18,11 @@ const MainContent = ({ notification, car }) => {
   } else if (notification.notification_type == "rent_started") {
     leftContent = `Your rent on `;
     rightContent = "starts today.";
+  } else if (notification.notification_type == "rent_completed") {
+    leftContent = `Your rent on `;
+    rightContent = "ended today.";
+  } else if (notification.notification_type == "got_rated") {
+    leftContent = `You got rated on rental of `;
   } else {
     leftContent = "Generic notification";
   }
@@ -36,6 +42,7 @@ const NotificationCard = ({ notification }) => {
   const [starsChoosen, setStarsChoosen] = useState(1);
   const [car, setCar] = useState({}); // car info
   const [owner, setOwner] = useState({}); // owner info
+  const { user } = React.useContext(AuthContext);
 
   // fetch car info
   useEffect(() => {
@@ -91,6 +98,22 @@ const NotificationCard = ({ notification }) => {
     return `${Math.floor(seconds)}s`;
   };
 
+  const submitRate = async () => {
+    let rentId = notification.message.split(":")[1];
+    const res = await fetch(`http://localhost:9000/api/v1/rents/${rentId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        rating: starsChoosen,
+        account_type: user.user_metadata.account_type,
+      }),
+    });
+    const data = await res.json();
+    console.log(data);
+  };
+
   return (
     <div className="notification_card notification_unread">
       .
@@ -113,77 +136,88 @@ const NotificationCard = ({ notification }) => {
         </div>
       </div>
       <div className="notification_card_sub">
-        {/* <div className="notification_stars">
-          <FontAwesomeIcon
-            className={"notification__star--colored"}
-            icon={faStar}
-          />
-          <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-          <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-          <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-          <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-        </div> */}
-
-        <Popup
-          trigger={<button className="notification_card_rate_btn">Rate</button>}
-          position="center"
-          offsetY={100}
-          arrow={false}
-        >
-          <div className="notification_card_rate_popup">
-            <img className="notification_rate_img" src={rateImage} />
-            <p className="notification_rate_title">Rate your experience</p>
-            <div className="notification_stars">
-              <FontAwesomeIcon
-                className={
-                  starsChoosen >= "1"
-                    ? "notification__star--colored"
-                    : "notification__star"
-                }
-                icon={faStar}
-                onClick={() => setStarsChoosen(1)}
-              />
-              <FontAwesomeIcon
-                className={
-                  starsChoosen >= "2"
-                    ? "notification__star--colored"
-                    : "notification__star"
-                }
-                icon={faStar}
-                onClick={() => setStarsChoosen(2)}
-              />
-              <FontAwesomeIcon
-                className={
-                  starsChoosen >= "3"
-                    ? "notification__star--colored"
-                    : "notification__star"
-                }
-                icon={faStar}
-                onClick={() => setStarsChoosen(3)}
-              />
-              <FontAwesomeIcon
-                className={
-                  starsChoosen >= "4"
-                    ? "notification__star--colored"
-                    : "notification__star"
-                }
-                icon={faStar}
-                onClick={() => setStarsChoosen(4)}
-              />
-              <FontAwesomeIcon
-                className={
-                  starsChoosen >= "5"
-                    ? "notification__star--colored"
-                    : "notification__star"
-                }
-                icon={faStar}
-                onClick={() => setStarsChoosen(5)}
-              />
-            </div>
-
-            <button className="notification_card_submit_btn">Submit</button>
+        {notification.notification_type == "got_rated" && (
+          <div className="notification_stars">
+            <FontAwesomeIcon
+              className={"notification__star--colored"}
+              icon={faStar}
+            />
+            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
+            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
+            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
+            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
           </div>
-        </Popup>
+        )}
+
+        {notification.notification_type == "rent_completed" && (
+          <Popup
+            trigger={
+              <button className="notification_card_rate_btn">Rate</button>
+            }
+            position="center"
+            offsetY={100}
+            arrow={false}
+          >
+            <div className="notification_card_rate_popup">
+              <img className="notification_rate_img" src={rateImage} />
+              <p className="notification_rate_title">Rate your experience</p>
+              <div className="notification_stars">
+                <FontAwesomeIcon
+                  className={
+                    starsChoosen >= "1"
+                      ? "notification__star--colored"
+                      : "notification__star"
+                  }
+                  icon={faStar}
+                  onClick={() => setStarsChoosen(1)}
+                />
+                <FontAwesomeIcon
+                  className={
+                    starsChoosen >= "2"
+                      ? "notification__star--colored"
+                      : "notification__star"
+                  }
+                  icon={faStar}
+                  onClick={() => setStarsChoosen(2)}
+                />
+                <FontAwesomeIcon
+                  className={
+                    starsChoosen >= "3"
+                      ? "notification__star--colored"
+                      : "notification__star"
+                  }
+                  icon={faStar}
+                  onClick={() => setStarsChoosen(3)}
+                />
+                <FontAwesomeIcon
+                  className={
+                    starsChoosen >= "4"
+                      ? "notification__star--colored"
+                      : "notification__star"
+                  }
+                  icon={faStar}
+                  onClick={() => setStarsChoosen(4)}
+                />
+                <FontAwesomeIcon
+                  className={
+                    starsChoosen >= "5"
+                      ? "notification__star--colored"
+                      : "notification__star"
+                  }
+                  icon={faStar}
+                  onClick={() => setStarsChoosen(5)}
+                />
+              </div>
+
+              <button
+                onClick={submitRate}
+                className="notification_card_submit_btn"
+              >
+                Submit
+              </button>
+            </div>
+          </Popup>
+        )}
       </div>
     </div>
   );

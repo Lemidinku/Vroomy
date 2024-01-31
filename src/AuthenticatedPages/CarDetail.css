@@ -55,7 +55,7 @@ svg {
 }
 
 /* default p tag */
-p {
+.car-details--p {
   font-size: 1.4rem;
   font-weight: 400;
 }
@@ -254,6 +254,24 @@ p {
   font-size: 3rem;
   font-weight: 600;
   color: var(--primary-default);
+}
+
+.car-detail__input {
+  border: 1px solid black;
+  height: 40px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.edit_car_button {
+  all: unset;
+  border-radius: 0.625em;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+  margin: 5px;
 }
 
 .car-detail__owner__image {

@@ -11,13 +11,16 @@ const Requests = () => {
 
   useEffect(() => {
     const fetchRequests = async () => {
-      const res = await fetch(`http://localhost:9000/api/v1/requests/owner`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          user_id: user.id,
-        },
-      });
+      const res = await fetch(
+        `http://localhost:9000/api/v1/requests/${user.user_metadata.account_type}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            user_id: user.id,
+          },
+        }
+      );
       const data = await res.json();
       setRequestsList(data);
     };
@@ -30,7 +33,7 @@ const Requests = () => {
       return <RequestsRow key={request.id} request={request} />;
     });
   } else {
-    requests = <p>No requests</p>;
+    requests = <p style={{ textAlign: "center" }}>No Requests</p>;
   }
   return (
     <>
@@ -49,7 +52,11 @@ const Requests = () => {
                 </div>
                 <div className="booking__request__dropdown">
                   <label htmlFor="myDropdown"></label>
-                  <select id="myDropdown" name="myDropdown">
+                  <select
+                    id="myDropdown"
+                    name="myDropdown"
+                    className="dropdown--select"
+                  >
                     <option value="option1">This Week</option>
                     <option value="option2">This Month</option>
                     <option value="option3">This Year</option>
@@ -68,9 +75,11 @@ const Requests = () => {
                     <div className="row__header">
                       <p>Booking Date</p>
                     </div>
-                    <div className="row__header--status">
-                      <p>Status</p>
-                    </div>
+                    {user.user_metadata.account_type === "owner" && (
+                      <div className="row__header--status">
+                        <p>Status</p>
+                      </div>
+                    )}
                   </div>
                   {/* Mobile View */}
                   <div className="row__mobile">

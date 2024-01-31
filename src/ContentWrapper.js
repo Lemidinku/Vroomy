@@ -69,7 +69,7 @@ function ContentWrapper() {
             <>
               <Route path="mydashboard" element={<MyDashboardLayout />}>
                 <Route index element={<Requests />} />
-                <Route path="requests" element={<Bookings />} />
+                <Route path="bookings" element={<Bookings />} />
                 <Route path="rentalhistory" element={<RentalHistory />} />
               </Route>
             </>

@@ -29,7 +29,7 @@ const RentalHistory = () => {
       return <RentalHistoryRow key={rent.rent_id} rent={rent} />;
     });
   } else {
-    rents = <p>No Rents</p>;
+    rents = <p style={{ textAlign: "center" }}>No Rents</p>;
   }
   console.log(rentalsList);
   return (
@@ -94,7 +94,11 @@ const RentalHistory = () => {
               </div>
               <div className="rental__history__dropdown">
                 <label htmlFor="myDropdown"></label>
-                <select id="myDropdown" name="myDropdown">
+                <select
+                  id="myDropdown"
+                  name="myDropdown"
+                  className="dropdown--select"
+                >
                   <option value="option1">This Week</option>
                   <option value="option2">This Month</option>
                   <option value="option3">This Year</option>
@@ -104,7 +108,9 @@ const RentalHistory = () => {
             <div className="rental__history__table">
               <div className="rental__history__table__container">
                 <div className="row__header--grid">
-                  <div className="row__header row__header--number"></div>
+                  <div className="row__header row__header--number">
+                    <p>No.</p>
+                  </div>
                   <div className="row__header row__header--username">
                     <p>User's Name</p>
                   </div>

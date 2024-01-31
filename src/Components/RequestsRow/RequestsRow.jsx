@@ -57,19 +57,21 @@ const RequestsRow = ({ request }) => {
           <div className="row__data--date">
             <p>{formatDate(new Date(request.start_date))}</p>
           </div>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-right fa-arrow-right--requests"></i>
           <div className="row__data--date">
             <p>{formatDate(new Date(request.return_date))}</p>
           </div>
         </div>
-        <div className="row__data--status">
-          <div className="row__data--status_accept">
-            <p onClick={(e) => handleRequest("accepted")}>Accept</p>
+        {user.user_metadata.account_type == "owner" && (
+          <div className="row__data--status">
+            <div className="row__data--status_accept">
+              <p onClick={(e) => handleRequest("accepted")}>Accept</p>
+            </div>
+            <div className="row__data--status_decline">
+              <p onClick={(e) => handleRequest("declined")}>Decline</p>
+            </div>
           </div>
-          <div className="row__data--status_decline">
-            <p onClick={(e) => handleRequest("declined")}>Decline</p>
-          </div>
-        </div>
+        )}
       </div>
     </>
   );

@@ -26,9 +26,10 @@ const Notifications = () => {
       return <NotificationCard key={noti.id} notification={noti} />;
     });
   }
+  console.log(notifications);
   return (
     <>
-      <main className="notification_main">
+      <div className="notification_main">
         <h1>Notifications</h1>
 
         <div className="notification_filters">
@@ -42,7 +43,7 @@ const Notifications = () => {
           {/* <NotificationCard /> */}
           {noti_list}
         </div>
-      </main>
+      </div>
     </>
   );
 };

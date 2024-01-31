@@ -184,14 +184,14 @@ const MyCarDetail = () => {
                 <div className="editProfile">
                   <button
                     type="button"
-                    className="editProfile__button"
+                    className="editProfile__button edit_car_button"
                     onClick={() => setEditing(true)}
                   >
                     <h3>Edit Car</h3>
                   </button>
                   <button
                     type="button"
-                    className="editProfile__button"
+                    className="editProfile__button edit_car_button"
                     // onClick={}
                   >
                     <h3>Delete</h3>
@@ -295,21 +295,25 @@ const MyCarDetail = () => {
                     icon={faCar}
                   />
 
-                  <p>{car?.type || "Type"}</p>
+                  <p className="car-details--p">{car?.type || "Type"}</p>
                 </li>
                 <li className="flex-start">
                   <FontAwesomeIcon
                     className="car-card__description__icon"
                     icon={faChair}
                   />
-                  <p>{car?.seating_capacity || 0} Seats</p>
+                  <p className="car-details--p">
+                    {car?.seating_capacity || 0} Seats
+                  </p>
                 </li>
                 <li className="flex-start">
                   <FontAwesomeIcon
                     className="car-card__description__icon"
                     icon={faGears}
                   />
-                  <p>{car?.transmission_type || "Manual"}</p>
+                  <p className="car-details--p">
+                    {car?.transmission_type || "Manual"}
+                  </p>
                 </li>
                 <li className="flex-start">
                   <FontAwesomeIcon
@@ -326,25 +330,28 @@ const MyCarDetail = () => {
                       value={carInfo.location}
                       onChange={handleChange}
                       required
+                      className="car-detail__input"
                     />
                   ) : (
-                    <p>{car?.location || "Location"}</p>
+                    <p className="car-details--p">
+                      {car?.location || "Location"}
+                    </p>
                   )}
                 </li>
               </ul>
               <h2 className="h-3">Features</h2>
               <ul className="grid about-car__description__specification">
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
               </ul>
 
@@ -352,6 +359,7 @@ const MyCarDetail = () => {
                 <p className="car-detail__price">
                   {editing ? (
                     <input
+                      className="car-detail__input"
                       placeholder={car?.daily_rental_fee}
                       onChange={handleChange}
                       name="daily_rental_fee"
@@ -370,7 +378,7 @@ const MyCarDetail = () => {
                     alt="profile image of owner"
                     className="car-detail__owner__image"
                   />
-                  <p>{car?.profiles.username}</p>
+                  <p className="car-details--p">{car?.profiles.username}</p>
                   <ol className="star-container flex">
                     <FontAwesomeIcon
                       className="star--checked star--big"

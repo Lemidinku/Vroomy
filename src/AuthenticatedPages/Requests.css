@@ -9,7 +9,7 @@
 .booking__request__dropdown {
   padding-top: 15px;
 }
-select {
+.dropdown--select {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #b8b6b6;
@@ -79,10 +79,6 @@ select {
   padding: 6px 5px 6px 6px;
   margin-right: 5px;
   margin-left: 5px;
-}
-
-.fa-arrow-right {
-  padding-top: 25px;
 }
 
 .row_data--carname {
