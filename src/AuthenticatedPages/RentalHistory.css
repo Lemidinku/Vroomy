@@ -107,7 +107,7 @@ main {
 .rental__history__dropdown {
   padding-top: 15px;
 }
-select {
+.dropdown--select {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #b8b6b6;

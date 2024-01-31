@@ -31,7 +31,7 @@ const Bookings = () => {
       return <BookingRow key={booking.id} booking={booking} />;
     });
   } else {
-    bookings = <p>No requests</p>;
+    bookings = <p style={{ textAlign: "center" }}>No Bookings</p>;
   }
   return (
     <>
@@ -102,7 +102,11 @@ const Bookings = () => {
                 </div>
                 <div className="booking__dropdown">
                   <label htmlFor="myDropdown"></label>
-                  <select id="myDropdown" name="myDropdown">
+                  <select
+                    id="myDropdown"
+                    name="myDropdown"
+                    className="dropdown--select"
+                  >
                     <option value="option1">This Week</option>
                     <option value="option2">This Month</option>
                     <option value="option3">This Year</option>

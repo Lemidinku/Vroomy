@@ -56,7 +56,7 @@ const BookingRow = ({ booking }) => {
           <div className="row__data--date">
             <p>{formatDate(new Date(booking.start_date))}</p>
           </div>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-right fa-arrow-right--booking "></i>
           <div className="row__data--date">
             <p>{formatDate(new Date(booking.return_date))}</p>
           </div>

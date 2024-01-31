@@ -115,14 +115,14 @@ const CarDetail = () => {
                     className="car-card__description__icon"
                     icon={faCar}
                   />
-                  <p>{car?.type || "Vitz"}</p>
+                  <p className="car-details--p">{car?.type || "Vitz"}</p>
                 </li>
                 <li className="flex-start">
                   <FontAwesomeIcon
                     className="car-card__description__icon"
                     icon={faChair}
                   />
-                  <p>
+                  <p className="car-details--p">
                     <span>{car?.seating_capacity || 7} </span> Seats
                   </p>
                 </li>
@@ -131,29 +131,31 @@ const CarDetail = () => {
                     className="car-card__description__icon"
                     icon={faGears}
                   />
-                  <p>{car?.transmission_type || "Manual"}</p>
+                  <p className="car-details--p">
+                    {car?.transmission_type || "Manual"}
+                  </p>
                 </li>
                 <li className="flex-start">
                   <FontAwesomeIcon
                     className="car-card__description__icon"
                     icon={faLocationDot}
                   />
-                  <p>4-kilo</p>
+                  <p className="car-details--p">4-kilo</p>
                 </li>
               </ul>
               <h2 className="h-3">Features</h2>
               <ul className="grid about-car__description__specification">
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
                 <li>
-                  <p>specification</p>
+                  <p className="car-details--p">specification</p>
                 </li>
               </ul>
 
@@ -173,7 +175,7 @@ const CarDetail = () => {
                     }
                     className="car-detail__owner__image"
                   />
-                  <p>{car?.profiles.username}</p>
+                  <p className="car-details--p">{car?.profiles.username}</p>
                   <ol className="star-container flex">
                     <FontAwesomeIcon
                       className="star--checked star--big"

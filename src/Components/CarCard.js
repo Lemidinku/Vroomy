@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./CarCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,6 +13,7 @@ import carImage from "./g-class pick up.jpg";
 import OwnerprofileImage from "./profile-sample.png";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
 
 const CarCard = ({ car }) => {
   const generalCarImageUrl =
@@ -21,16 +22,17 @@ const CarCard = ({ car }) => {
     "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/avatars/";
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const { user } = useContext(AuthContext);
   return (
     <Link
       className="car-card shadow rounded"
-      to={`${car.id}`}
+      to={user ? `${car.id}` : "/login"}
       state={{ search: `?${searchParams.toString()}` }}
     >
       <div className="car-card__image-container">
         {car.is_electric && (
           <div className="car-card__electric">
-            <p>Electric</p>
+            <p className="car-card--p">Electric</p>
           </div>
         )}
         <img
@@ -51,14 +53,14 @@ const CarCard = ({ car }) => {
                 className="car-card__description__icon"
                 icon={faCar}
               />
-              <p>{car.type}</p>
+              <p className="car-card--p">{car.type}</p>
             </li>
             <li className="flex-start">
               <FontAwesomeIcon
                 className="car-card__description__icon"
                 icon={faChair}
               />
-              <p>
+              <p className="car-card--p">
                 <span>{car.seating_capacity} </span> Seats
               </p>
             </li>
@@ -67,14 +69,14 @@ const CarCard = ({ car }) => {
                 className="car-card__description__icon"
                 icon={faGears}
               />
-              <p>{car.transmission_type}</p>
+              <p className="car-card--p">{car.transmission_type}</p>
             </li>
             <li className="flex-start">
               <FontAwesomeIcon
                 className="car-card__description__icon"
                 icon={faLocationDot}
               />
-              <p>4-kilo</p>
+              <p className="car-card--p">4-kilo</p>
             </li>
           </ul>
           <div className="car-card__about-owner ">
@@ -86,7 +88,7 @@ const CarCard = ({ car }) => {
               }
               alt="profile image of owner"
             />
-            <p>{car.profiles.username}</p>
+            <p className="car-card--p">{car.profiles.username}</p>
             <ol className="flex owner-stars">
               <li className="star star-checked">
                 {" "}

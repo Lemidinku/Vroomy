@@ -1,8 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import "./Dashboard.css";
+import { AuthContext } from "../../AuthProvider";
+import React from "react";
 
 const Dashboard = () => {
+  const { user } = React.useContext(AuthContext);
+  let role = user.user_metadata.account_type;
   return (
     <>
       <nav id="dashboard__side">
@@ -11,19 +15,26 @@ const Dashboard = () => {
             <p>Dashboard</p>
           </div>
           <ul className="dashboard__ul">
+            {role === "owner" && (
+              <li className="dashboard__li">
+                <NavLink to="/mydashboard" end>
+                  <Icon
+                    icon="material-symbols-light:history"
+                    width="40"
+                    height="40"
+                    className="dashboard__li__icons"
+                  />
+                  <p className="dashboard__text">My Cars</p>
+                </NavLink>
+              </li>
+            )}
             <li className="dashboard__li">
-              <NavLink to="/mydashboard">
-                <Icon
-                  icon="material-symbols-light:history"
-                  width="40"
-                  height="40"
-                  className="dashboard__li__icons"
-                />
-                <p className="dashboard__text">My Cars</p>
-              </NavLink>
-            </li>
-            <li className="dashboard__li">
-              <NavLink to="/mydashboard/requests">
+              <NavLink
+                to={
+                  role === "owner" ? "/mydashboard/requests" : "/mydashboard/"
+                }
+                end
+              >
                 <Icon
                   icon="mdi:account-multiple-plus"
                   width="40"
@@ -66,17 +77,19 @@ const Dashboard = () => {
                 <p className="dashboard__text">Notifications</p>
               </NavLink>
             </li> */}
-            <li className="dashboard__li">
-              <NavLink to="/mydashboard/addcar">
-                <Icon
-                  icon="clarity:car-line"
-                  width="40"
-                  height="40"
-                  className="dashboard__li__icons"
-                />
-                <p className="dashboard__text">Add Car</p>
-              </NavLink>
-            </li>
+            {role === "owner" && (
+              <li className="dashboard__li">
+                <NavLink to="/mydashboard/addcar">
+                  <Icon
+                    icon="clarity:car-line"
+                    width="40"
+                    height="40"
+                    className="dashboard__li__icons"
+                  />
+                  <p className="dashboard__text">Add Car</p>
+                </NavLink>
+              </li>
+            )}
           </ul>
           <li className="dashboard__li__log">
             <NavLink to="logout">
