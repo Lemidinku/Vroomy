@@ -2,9 +2,12 @@ import { Icon } from "@iconify/react";
 import { NavLink } from "react-router-dom";
 import profile from "../../AuthenticatedPages/DashboardImages/portrait.jpg";
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../AuthProvider";
 
-const Navbar = ({ pageTitle, isAuthenticated }) => {
+const Navbar = ({ pageTitle }) => {
+  const { user } = useContext(AuthContext);
+  let isAuthenticated = user ? true : false;
   const [Visible, setVisible] = useState(false);
   const handleHamburgerClick = () => {
     setVisible(true);
@@ -24,10 +27,10 @@ const Navbar = ({ pageTitle, isAuthenticated }) => {
           <p>{pageTitle}</p>
         </div>
         <div className="browse-profile">
-          <div className="browse--nav">
+          <NavLink className="browse--nav" to="/cars">
             <Icon icon="ph:globe" width="30" height="30" className="globe" />
             <p className="browse__text">Browse</p>
-          </div>
+          </NavLink>
           <div
             className="hamburger__menu"
             id="hamburgerMenu"
@@ -38,35 +41,35 @@ const Navbar = ({ pageTitle, isAuthenticated }) => {
 
           {isAuthenticated ? (
             <>
-            <NavLink to="/">
-              <div className="navbar-dashboard">
-                <p>Dashboard</p>
-              </div>
-            </NavLink>
+              <NavLink to="/mydashboard">
+                <div className="navbar-dashboard">
+                  <p>Dashboard</p>
+                </div>
+              </NavLink>
 
-            <NavLink to = "/">
-              <div className="navbar--notification">
-              <Icon icon="iconamoon:notification" width="30" height="30"/>
-              </div>
-            </NavLink>
+              <NavLink to="/notifications">
+                <div className="navbar--notification">
+                  <Icon icon="iconamoon:notification" width="30" height="30" />
+                </div>
+              </NavLink>
 
-            <NavLink to = "/">
-              <div className="profile">
-                <img src={profile} alt="Profile Picture" className="profile__img" />
-              </div>
-            </NavLink>
+              <NavLink to="/myprofile">
+                <div className="profile--navbar">
+                  <img
+                    src={profile}
+                    alt="Profile Picture"
+                    className="profile__img"
+                  />
+                </div>
+              </NavLink>
             </>
-            
-
           ) : (
-            <NavLink to = "/">
+            <NavLink to="/signup">
               <div className="signup-button--navbar">
-                <p>Create Account</p>
+                <p>Get Started</p>
               </div>
             </NavLink>
           )}
-
-
 
           {/* <div className="profile">
             <img src={profile} alt="Profile Picture" className="profile__img" />

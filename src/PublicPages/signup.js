@@ -218,7 +218,7 @@ function Signup() {
           <button className="signup__button">Signup</button>
         </form>
         <p className="signup__account">
-          Already have an account? <a href="#"> login</a>
+          Already have an account? <a href="/login"> login</a>
         </p>
       </div>
       <div className="signup__graphic">

@@ -43,6 +43,7 @@ const NotificationCard = ({ notification }) => {
   const [car, setCar] = useState({}); // car info
   const [owner, setOwner] = useState({}); // owner info
   const { user } = React.useContext(AuthContext);
+  const [rent, setRent] = useState({}); // rent info
 
   // fetch car info
   useEffect(() => {
@@ -69,7 +70,33 @@ const NotificationCard = ({ notification }) => {
       }
     };
 
+    const fetchRent = async () => {
+      try {
+        let rentId = notification.message.split(":")[1];
+        const response = await fetch(
+          `http://localhost:9000/api/v1/rents/${rentId}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        setRent(data);
+      } catch (error) {
+        console.error("Error fetching Rent:", error);
+      }
+    };
+
     fetchCar();
+    if (notification.notification_type == "got_rated") {
+      fetchRent();
+    }
   }, []);
 
   // a function that accepts a date and returns a string like "1d ago" or "2h ago"
@@ -114,6 +141,11 @@ const NotificationCard = ({ notification }) => {
     console.log(data);
   };
 
+  let rated =
+    user.user_metadata.account_type === "owner"
+      ? rent?.renter_satisfaction
+      : rent?.owner_satisfaction;
+
   return (
     <div className="notification_card notification_unread">
       .
@@ -142,10 +174,38 @@ const NotificationCard = ({ notification }) => {
               className={"notification__star--colored"}
               icon={faStar}
             />
-            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
-            <FontAwesomeIcon className={"notification__star"} icon={faStar} />
+            <FontAwesomeIcon
+              className={
+                rated >= "2"
+                  ? "notification__star--colored"
+                  : `notification__star`
+              }
+              icon={faStar}
+            />
+            <FontAwesomeIcon
+              className={
+                rated >= "3"
+                  ? "notification__star--colored"
+                  : `notification__star`
+              }
+              icon={faStar}
+            />
+            <FontAwesomeIcon
+              className={
+                rated >= "4"
+                  ? "notification__star--colored"
+                  : `notification__star`
+              }
+              icon={faStar}
+            />
+            <FontAwesomeIcon
+              className={
+                rated >= "5"
+                  ? "notification__star--colored"
+                  : `notification__star`
+              }
+              icon={faStar}
+            />
           </div>
         )}
 
