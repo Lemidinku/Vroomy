@@ -1,0 +1,409 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #fffffe;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.logo__text {
+  font-size: x-large;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  padding-top: 10px;
+}
+.logo__text--blue {
+  color: #3151f9;
+}
+
+.page__title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-right: 450px;
+}
+
+.browse-profile {
+  display: flex;
+  margin: 10px;
+}
+
+.browse {
+  margin-right: 20px;
+  width: 150px;
+  padding-top: 20px;
+}
+.browse a {
+  display: flex;
+  justify-content: center;
+}
+.fa-globe {
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.hamburger__menu {
+  display: none;
+}
+
+.profile {
+  padding: 20px;
+}
+.profile__img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.page__title--mobile {
+  display: none;
+}
+
+/*  Body   */
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.main__content {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  background-color: rgba(217, 217, 217, 0.62);
+  justify-items: center;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__title {
+  padding-left: 30px;
+}
+
+.dashboard__ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.dashboard__li {
+  margin: 0 20px 20px 20px;
+}
+
+.dashboard__li__icons {
+  padding-top: 10px;
+}
+
+.dashboard__text {
+  margin-left: 9px;
+}
+
+.dashboard__li__log {
+  list-style-type: none;
+  margin-top: auto;
+}
+
+.dashboard__li__log a {
+  display: flex;
+  justify-content: center;
+  color: #e41b4b;
+}
+.dashboard__li__log a:visited {
+  color: rgba(228, 27, 75, 0.5);
+}
+
+.dashboard__li a {
+  display: flex;
+  text-decoration: none;
+}
+
+.dashboard--active {
+  border-left: 5px solid #3151f9;
+  background-color: rgba(119, 141, 253, 0.35);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.booking__request {
+  background-color: #fffffe;
+  border-radius: 10px;
+  width: 1000px;
+  margin: 30px;
+  padding: 0 20px 20px 20px;
+}
+
+.booking__request__dropdown {
+  padding-top: 15px;
+}
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #b8b6b6;
+  border-radius: 5px;
+  /* appearance: none; Remove default styles in some browsers */
+}
+
+.booking__request__header {
+  display: flex;
+  justify-content: space-between;
+}
+.booking__request__title {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.booking__request__table {
+  padding: 10px;
+}
+
+.booking__request__table__container {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+.row__mobile {
+  display: none;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row__header {
+  font-weight: 500;
+}
+.row__header--flex {
+  /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.row__header--status {
+  margin-right: 50px;
+}
+
+.row__header--carname {
+  margin-left: 15px;
+}
+
+.row .user-name {
+  display: flex;
+}
+.user-name img {
+  padding-top: 5px;
+}
+.user-name--name {
+  margin-left: 30px;
+}
+
+.row_data--bookingdate {
+  display: flex;
+}
+.row__data--date p {
+  border: 1px solid #d8dae5;
+  padding: 6px 5px 6px 6px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.fa-arrow-right {
+  padding-top: 25px;
+}
+
+.row_data--carname {
+  margin-right: 20px;
+}
+
+.row__data--status {
+  display: flex;
+}
+
+.row__data--status_accept p {
+  padding: 8px;
+  background-color: rgba(54, 217, 90, 0.13);
+  color: #36d95a;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.row__data--status_decline p {
+  padding: 8px;
+  background-color: rgba(255, 83, 83, 0.3);
+  color: #d93636;
+  border-radius: 5px;
+}
+
+.pagination {
+  display: inline-block;
+  float: right; /*might cause problems*/
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.pagination a.active {
+  background-color: #778dfd;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/*Footer*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.footer__li {
+  margin-right: 20px;
+}
+
+.location {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard {
+    display: none;
+  }
+  .promotion-status {
+    display: none;
+  }
+  .row__mobile {
+    display: block;
+  }
+  .row__desktop {
+    display: none;
+  }
+
+  .logo__text {
+    font-size: 16;
+  }
+  .page__title {
+    display: none;
+  }
+  .page__title--mobile {
+    display: block;
+    text-align: left;
+    width: 100vw;
+    margin-left: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+
+  .booking__request__nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .browse {
+    display: none;
+  }
+  .hamburger__menu {
+    display: block;
+    padding-top: 30px;
+  }
+  .browse-profile {
+    margin: 10px 0 0 0;
+  }
+
+  .main__content {
+    background-color: #fffffe;
+    justify-items: start;
+    width: fit-content;
+  }
+
+  .booking__request {
+    width: fit-content;
+    margin: 0;
+    padding-left: 5px;
+  }
+
+  .booking__request__header {
+    width: 90vw;
+  }
+  .booking__request__dropdown {
+    padding-top: 25px;
+  }
+  .booking__request__table__container {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .row__header--flex {
+    display: none;
+  }
+
+  .row {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+  }
+  .row_data--user-car {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+  .row_data--date-status {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+  }
+
+  .user-name--name {
+    margin-left: 5px;
+  }
+
+  .pagination {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .footer__container {
+    margin-left: 25%;
+  }
+  footer .logo {
+    margin-left: 7rem;
+  }
+  .location {
+    margin-left: 7rem;
+  }
+}
