@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./CarDetail.css";
 import "../Components/Calendar.css";
 
@@ -17,11 +17,12 @@ import {
   faChair,
   faCar,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { AuthContext } from "../AuthProvider";
 import { useParams, Link, useLocation } from "react-router-dom";
 import SendRequest from "../Components/SendRequest";
 
 const CarDetail = () => {
+  const { user } = useContext(AuthContext);
   const generalCarImageUrl =
     "https://wwoucxtafkpgzvjrwjye.supabase.co/storage/v1/object/public/car_images/";
   const generalAvatarUrl =
@@ -207,7 +208,7 @@ const CarDetail = () => {
           </section>
         </div>
       ) : (
-        <h1>Loading... or Car not found</h1>
+        <h1 className="flex">Loading... or Car not found</h1>
       )}
     </>
   );

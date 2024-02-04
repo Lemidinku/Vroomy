@@ -87,7 +87,7 @@ const Dashboard = () => {
             <li className="dashboard__li">
               <NavLink to="/mydashboard/rentalhistory">
                 <Icon
-                  icon="material-symbols:book-outline"
+                  icon="material-symbols-light:history"
                   width="40"
                   height="40"
                   className="dashboard__li__icons"

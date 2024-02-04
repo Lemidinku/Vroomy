@@ -1,0 +1,78 @@
+.main--home {
+  margin-top: 0;
+  display: grid;
+  gap: 14.4rem;
+}
+.hero {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+  div {
+    position: absolute;
+    left: 5%;
+    bottom: 40%;
+
+    display: grid;
+    gap: 2rem;
+    .h-1,
+    .h-2 {
+      color: #fff !important;
+    }
+  }
+}
+
+.catagory {
+  gap: 4.8rem;
+  background-color: #fff;
+
+  section {
+    max-width: 24rem;
+    text-align: center;
+    border-radius: 9px;
+
+    overflow: hidden;
+    h1 {
+      padding: 1rem;
+    }
+  }
+}
+
+.testimonial {
+  display: grid;
+  max-width: 24rem;
+  justify-items: center;
+  margin-left: 2.4rem;
+  img {
+    border-radius: 50%;
+    width: 8rem;
+  }
+  p {
+    border-radius: 9px;
+    padding: 2rem;
+  }
+}
+.about-us {
+  display: grid;
+  max-width: 24rem;
+  margin-left: 3rem;
+  img {
+    border-radius: 50%;
+    width: 3rem;
+  }
+  p {
+    border-radius: 9px;
+    padding: 2rem;
+  }
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.asdf {
+  justify-items: center;
+  gap: 6.4rem;
+}

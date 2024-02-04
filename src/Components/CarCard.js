@@ -23,6 +23,8 @@ const CarCard = ({ car }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const { user } = useContext(AuthContext);
+  let directs = "";
+
   return (
     <Link
       className="car-card shadow rounded"
